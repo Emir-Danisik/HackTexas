@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "InterSystems Default Dark Modern",
+    "objectscript.conn" :{
+        "ns": "USER",
+        "active": false,
+        "password": "test123",
+        "username": "SuperUser",
+        "host": "localhost",
+        "port": 52773
+    }
+}
