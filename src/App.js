@@ -511,7 +511,7 @@ function App() {
 
     try {
       const response = await fetch(
-        `http://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=0&max_results=8`
+        `https://export.arxiv.org/api/query?search_query=all:${encodeURIComponent(query)}&start=0&max_results=8`
       );
 
       if (!response.ok) {

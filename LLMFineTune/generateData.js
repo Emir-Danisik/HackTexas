@@ -71,7 +71,7 @@ const anthropic = new Anthropic({
         console.log(`Fetching ${maxResults} articles for topic: ${topic.description}`);
         
         const response = await fetch(
-          `http://export.arxiv.org/api/query?` + 
+          `https://export.arxiv.org/api/query?` + 
           `search_query=cat:${encodeURIComponent(topic.category)}+` +
           `AND+all:${encodeURIComponent(topic.query)}` +
           `&start=0&max_results=${maxResults}&sortBy=submittedDate&sortOrder=descending`
