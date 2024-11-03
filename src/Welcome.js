@@ -62,9 +62,18 @@ const ExampleQueriesRow = styled(motion.div)`
   }
 `;
 
+const LogoImage = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 160px;
+  width: auto;
+`;
+
 const Welcome = ({ exampleQueries1, exampleQueries2, handleExampleClick }) => {
   return (
     <WelcomeContainer>
+      <LogoImage src="/NewtonAi.png" alt="Newton AI Logo" />
       <h1 style={{marginTop: '90px', letterSpacing: '-0.15px'}}>Newton AI</h1>
       <p className="subtitle" style={{fontSize: '16px', letterSpacing: '-0.25px'}}>
         Research Answers Created For Everyone
