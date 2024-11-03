@@ -126,7 +126,7 @@ const CloseButton = styled.button`
 `;
 
 const CollapseButton = styled(CloseButton)`
-  right: 5rem;
+  right: 4rem;
   opacity: 0.4;
 
   &:hover {
@@ -226,13 +226,6 @@ const VisualImage = styled.img`
   margin-bottom: 1rem;
 `;
 
-const VisualHeader = styled.h1`
-  font-family: 'Fraunces', serif;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-`;
-
 const ExplanationBox = styled.div`
   background: rgba(255, 255, 255, 0.05);
   border-radius: 6px;
@@ -240,18 +233,17 @@ const ExplanationBox = styled.div`
   color: white;
   font-weight: 200;
   margin-top: 1rem;
-  display: flex;
-  flex-direction: column;
-  min-height: min-content;
+  height: fit-content;
+  min-height: 200px;
 `;
 
 const RichTextExplanationBox = styled(ExplanationBox)`
   font-size: 16px;
   line-height: 1.6;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  height: fit-content;
+  overflow: visible;
   
   h1, h2, h3 {
-    font-family: 'Fraunces', serif;
     color: #fff;
     margin-top: 1em;
     margin-bottom: 0.5em;
@@ -259,7 +251,6 @@ const RichTextExplanationBox = styled(ExplanationBox)`
   
   p {
     margin-bottom: 1em;
-    font-weight: 300;
   }
   
   ul, ol {
@@ -278,11 +269,6 @@ const RichTextExplanationBox = styled(ExplanationBox)`
     background: rgba(255, 255, 255, 0.1);
     padding: 0.2em 0.4em;
     border-radius: 3px;
-  }
-
-  .markdown-body {
-    height: 100%;
-    width: 100%;
   }
 `;
 
@@ -807,17 +793,15 @@ const SpeakingOverlay = ({ onClose, image }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <VisualPane>
-              <VisualHeader>{visualizedHeader}</VisualHeader>
+              <h1>{visualizedHeader}</h1>
               <VisualImage 
                 src={visualizedImage}
                 alt="Visualization"
               />
               <RichTextExplanationBox>
-                <div className="markdown-body">
-                  <Markdown>
-                    {visualizedDescription}
-                  </Markdown>
-                </div>
+                <Markdown>
+                  {visualizedDescription}
+                </Markdown>
                 {isDescriptionStreaming && (
                   <motion.span
                     initial={{ opacity: 0 }}
