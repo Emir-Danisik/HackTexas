@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { Icon } from '@iconify/react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
+import OpenAI from 'openai';
+
+const openai = new OpenAI({
+  apiKey: process.env.REACT_APP_OPENAI_API_KEY,
+  dangerouslyAllowBrowser: true
+});
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -124,6 +130,8 @@ const SpeakingOverlay = ({ onClose, image }) => {
   const streamRef = useRef(null);
   const processorRef = useRef(null);
   const sourceRef = useRef(null);
+  const mediaRecorder = useRef(null);
+  const audioChunks = useRef([]);
 
   useEffect(() => {
     audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
@@ -254,103 +262,44 @@ const SpeakingOverlay = ({ onClose, image }) => {
   };
 
   const startManualRecording = async () => {
-    setIsManualRecording(true);
     try {
-      if (!client.current) {
-        client.current = new W3CWebSocket('ws://localhost:3001');
-        await new Promise((resolve, reject) => {
-          client.current.onopen = resolve;
-          client.current.onerror = reject;
-        });
-
-        // Set up message handling
-        client.current.onmessage = (message) => {
-          console.log('Received:', message.data);
-          const data = JSON.parse(message.data);
-          
-          switch (data.type) {
-            case 'response.audio.delta':
-              handleAudioDelta(data.delta);
-              break;
-            case 'response.audio_transcript.done':
-              setTranscript(prev => prev + data.transcript + '\n');
-              break;
-            case 'response.text.delta':
-              setTranscript(prev => prev + data.delta);
-              break;
-            case 'error':
-              console.error('Server error:', data.error);
-              setIsManualRecording(false);
-              break;
-            default:
-              break;
-          }
-        };
-      }
-
       const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const context = new AudioContext({ sampleRate: 24000 });
-      const source = context.createMediaStreamSource(stream);
-      const processor = context.createScriptProcessor(2048, 1, 1);
+      mediaRecorder.current = new MediaRecorder(stream);
+      audioChunks.current = [];
 
-      source.connect(processor);
-      processor.connect(context.destination);
-
-      processor.onaudioprocess = (e) => {
-        if (!isManualRecording) return;
-        
-        const inputData = e.inputBuffer.getChannelData(0);
-        const audioData = floatTo16BitPCM(inputData);
-        
-        if (client.current?.readyState === WebSocket.OPEN) {
-          // Create a message item with audio content
-          client.current.send(JSON.stringify({
-            type: 'conversation.item.create',
-            item: {
-              type: 'message',
-              role: 'user',
-              content: [{
-                type: 'input_audio',
-                audio: btoa(String.fromCharCode.apply(null, new Uint8Array(audioData)))
-              }]
-            }
-          }));
-        }
+      mediaRecorder.current.ondataavailable = (event) => {
+        audioChunks.current.push(event.data);
       };
 
-      streamRef.current = stream;
-      processorRef.current = processor;
-      sourceRef.current = source;
+      mediaRecorder.current.start();
+      setIsManualRecording(true);
     } catch (error) {
-      console.error('Error starting manual recording:', error);
-      setIsManualRecording(false);
+      console.error('Error starting recording:', error);
     }
   };
 
-  const stopManualRecording = () => {
+  const stopManualRecording = async () => {
+    if (!mediaRecorder.current) return;
+
+    mediaRecorder.current.onstop = async () => {
+      const audioBlob = new Blob(audioChunks.current, { type: 'audio/webm' });
+      const file = new File([audioBlob], 'recording.webm', { type: 'audio/webm' });
+
+      try {
+        const transcription = await openai.audio.transcriptions.create({
+          file: file,
+          model: "whisper-1",
+        });
+        setTranscript(transcription.text);
+        console.log("Transcription:", transcription.text);
+      } catch (error) {
+        console.error('Transcription error:', error);
+      }
+    };
+
+    mediaRecorder.current.stop();
     setIsManualRecording(false);
-
-    // Clean up audio resources
-    if (streamRef.current) {
-      streamRef.current.getTracks().forEach(track => track.stop());
-    }
-    if (processorRef.current) {
-      processorRef.current.disconnect();
-    }
-    if (sourceRef.current) {
-      sourceRef.current.disconnect();
-    }
-
-    // Request response from server
-    if (client.current?.readyState === WebSocket.OPEN) {
-      client.current.send(JSON.stringify({
-        type: 'response.create',
-        response: {
-          modalities: ['text', 'audio'],
-          instructions: 'Please assist the user.'
-        }
-      }));
-    }
+    mediaRecorder.current.stream.getTracks().forEach(track => track.stop());
   };
 
   const stopRecording = () => {
