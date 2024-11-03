@@ -65,9 +65,9 @@ const ExampleQueriesRow = styled(motion.div)`
 const Welcome = ({ exampleQueries1, exampleQueries2, handleExampleClick }) => {
   return (
     <WelcomeContainer>
-      <h1 style={{marginTop: '50px', letterSpacing: '-0.15px'}}>Newton AI</h1>
+      <h1 style={{marginTop: '90px', letterSpacing: '-0.15px'}}>Newton AI</h1>
       <p className="subtitle" style={{fontSize: '16px', letterSpacing: '-0.25px'}}>
-        Search arXiv papers with natural language
+        Research Answers Created For Everyone
       </p>
       
       <ScrollingQueries>

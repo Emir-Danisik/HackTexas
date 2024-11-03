@@ -34,9 +34,9 @@ const fetchFirstImage = async (description) => {
     }
   };
   
-//   export default fetchFirstImage;
+  export default fetchFirstImage;
   
-(async () => {
-  const imageUrl = await fetchFirstImage("laffer curve");
-  console.log(imageUrl);
-})();
+// (async () => {
+//   const imageUrl = await fetchFirstImage("laffer curve");
+//   console.log(imageUrl);
+// })();

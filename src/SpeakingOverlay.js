@@ -5,11 +5,35 @@ import { Icon } from '@iconify/react';
 import MicRecorder from 'mic-recorder-to-mp3';
 import { w3cwebsocket as W3CWebSocket } from 'websocket';
 import OpenAI from 'openai';
+import fetchWebImage from './fetchWebImage';
+import { desc } from 'framer-motion/client';
+import Markdown from 'markdown-to-jsx';
 
 const openai = new OpenAI({
   apiKey: process.env.REACT_APP_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true
 });
+
+// Update tools definition to include description
+const tools = [
+  {
+    type: "function",
+    function: {
+      name: "visualize_data",
+      description: "Visualize data when the user asks to show or visualize something",
+      parameters: {
+        type: "object",
+        properties: {
+          description: {
+            type: "string",
+            description: "A short 2-5 word description of what needs to be visualized"
+          }
+        },
+        required: ["description"]
+      }
+    }
+  }
+];
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -27,7 +51,7 @@ const Overlay = styled(motion.div)`
 
 const CircleLarge = styled(motion.div)`
   width: 150px;
-  height: 150px;
+  min-height: 150px;
   border-radius: 50%;
   background: url(${props => props.image}) no-repeat center center;
   background-size: cover;
@@ -35,6 +59,45 @@ const CircleLarge = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+// Add new styled components for sound waves
+const SoundWaveContainer = styled.div`
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+`;
+
+const SoundWave = styled.div`
+  position: absolute;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: ${props => props.isActive ? 'soundWave 2s infinite' : 'none'};
+  opacity: ${props => props.isActive ? 1 : 0};
+
+  @keyframes soundWave {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+  &:nth-child(3) {
+    animation-delay: 0.6s;
+  }
 `;
 
 const SpeakingText = styled.p`
@@ -62,9 +125,17 @@ const CloseButton = styled.button`
   }
 `;
 
+const CollapseButton = styled(CloseButton)`
+  right: 5rem;
+  opacity: 0.4;
+
+  &:hover {
+    opacity: 0.8;
+  }
+`;
+
 const Transcript = styled.div`
-  width: 40%;
-  // max-height: 80px; /* Limit to 3 lines */
+  width: ${props => props.isVisualPaneOpen ? '65%' : '40%'};
   overflow: hidden;
   line-height: 1.75;
   font-size: 18px;
@@ -75,6 +146,7 @@ const Transcript = styled.div`
   text-align: center;
 `;
 
+
 const ToggleButton = styled.button`
   position: absolute;
   top: 2rem;
@@ -84,7 +156,7 @@ const ToggleButton = styled.button`
   border-radius: 20px;
   color: white;
   padding: 8px 16px;
-  cursor: pointer;
+ cursor: pointer;
   transition: all 0.2s;
   font-family: 'Fraunces', serif;
   font-size: 14px;
@@ -106,6 +178,114 @@ const RecordingIndicator = styled.div`
   transition: background-color 0.2s;
 `;
 
+const SplitLayout = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s ease;
+`;
+
+const MainPane = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+`;
+
+// Update VisualPane to remove transition
+const VisualPane = styled.div`
+  flex: 1;
+  background: rgba(255, 255, 255, 0.00);
+  border-left: 0px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-y: auto;
+  max-height: 100vh;
+  color: white;
+  
+  /* Scrollbar styling */
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+  }
+`;
+
+const VisualImage = styled.img`
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+`;
+
+const VisualHeader = styled.h1`
+  font-family: 'Fraunces', serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+`;
+
+const ExplanationBox = styled.div`
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+  padding: 1.5rem;
+  color: white;
+  font-weight: 200;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  min-height: min-content;
+`;
+
+const RichTextExplanationBox = styled(ExplanationBox)`
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  
+  h1, h2, h3 {
+    font-family: 'Fraunces', serif;
+    color: #fff;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
+  }
+  
+  p {
+    margin-bottom: 1em;
+    font-weight: 300;
+  }
+  
+  ul, ol {
+    margin-left: 1.5em;
+    margin-bottom: 1em;
+  }
+  
+  blockquote {
+    border-left: 3px solid rgba(255, 255, 255, 0.2);
+    padding-left: 1em;
+    margin-left: 0;
+    font-style: italic;
+  }
+  
+  code {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+  }
+
+  .markdown-body {
+    height: 100%;
+    width: 100%;
+  }
+`;
+
 function floatTo16BitPCM(float32Array) {
   const buffer = new ArrayBuffer(float32Array.length * 2);
   const view = new DataView(buffer);
@@ -118,12 +298,18 @@ function floatTo16BitPCM(float32Array) {
 }
 
 const SpeakingOverlay = ({ onClose, image }) => {
+
   const [isListening, setIsListening] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [isVadMode, setIsVadMode] = useState(false);
   const [isManualRecording, setIsManualRecording] = useState(false);
+  const [isVisualPaneOpen, setIsVisualPaneOpen] = useState(false);
+  const [visualizedImage, setVisualizedImage] = useState("https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvdjU0NmJhdGNoMy1teW50LTM0LWJhZGdld2F0ZXJjb2xvcl8xLmpwZw.jpg");
+  const [visualizedDescription, setVisualizedDescription] = useState('');
+  const [visualizedHeader, setVisualizedHeader] = useState('');
   const [messages, setMessages] = useState([]);  // Add this state for chat history
   const [isResponding, setIsResponding] = useState(false);
+  const [isDescriptionStreaming, setIsDescriptionStreaming] = useState(false);
   const recorder = useRef(null);
   const client = useRef(null);
   const audioContext = useRef(null);
@@ -134,6 +320,95 @@ const SpeakingOverlay = ({ onClose, image }) => {
   const sourceRef = useRef(null);
   const mediaRecorder = useRef(null);
   const audioChunks = useRef([]);
+  const descriptionRef = useRef(''); // Add this ref to maintain description between renders
+
+
+  // Update visualize_data function
+  const visualize_data = async (description) => {
+    const retrievedImage = await fetchWebImage(description);
+    setVisualizedImage(retrievedImage);
+    setVisualizedHeader(description);
+    setIsVisualPaneOpen(true);
+    console.log('Visualized:', description);
+    const descriptionResponse = await describeVisualizedImage(retrievedImage);
+    setVisualizedDescription(descriptionResponse);
+    return `You, the LLM agent, have created a visualization and a description for: ${description}. JUST tell the user that you've done so on the right hand side, just describe what the user asked to visualize in one short line and nothing more.`;
+  };
+
+  // Update encodeImageToBase64 in SpeakingOverlay.js
+  const encodeImageToBase64 = async (imageUrl) => {
+    try {
+      // Use proxy endpoint
+      const proxyUrl = `http://localhost:3010/proxy-image?url=${encodeURIComponent(imageUrl)}`;
+      const response = await fetch(proxyUrl);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const blob = await response.blob();
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64String = reader.result.split(',')[1];
+          resolve(base64String);
+        };
+        reader.onerror = reject;
+        reader.readAsDataURL(blob);
+      });
+    } catch (error) {
+      console.error('Error encoding image:', error);
+      throw error;
+    }
+  };
+  
+  // Update description function to stream
+  const describeVisualizedImage = async (imageUrl) => {
+    try {
+      setIsDescriptionStreaming(true);
+      const base64Image = await encodeImageToBase64(imageUrl);
+      descriptionRef.current = ''; // Reset the ref
+      
+      const stream = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+          {
+            role: "system", 
+            content: "Create a rich, detailed markdown description of the image in the context on the previous visualization prompt right before. Use subheadings (but no headings), lists, and other markdown formatting to make the description engaging and well-structured. Include sections like:\n\n# Visual Analysis\n## Composition\n## Colors and Lighting\n## Key Elements\n\n# Interpretation\n## Mood and Atmosphere\n## Overall Impression"
+          },
+          ...messages,
+          {
+            role: "user",
+            content: [
+              {
+                type: "image_url",
+                image_url: { 
+                  url: `data:image/jpeg;base64,${base64Image}`
+                }
+              }
+            ]
+          }
+        ],
+        stream: true,
+      });
+
+      for await (const chunk of stream) {
+        const content = chunk.choices[0]?.delta?.content || '';
+        descriptionRef.current += content;
+        setVisualizedDescription(descriptionRef.current);
+      }
+
+      // After stream ends, ensure we set the final description
+      setVisualizedDescription(descriptionRef.current);
+      setIsDescriptionStreaming(false);
+      return descriptionRef.current; // Return the full description
+      
+    } catch (error) {
+      console.error('Error describing image:', error);
+      setIsDescriptionStreaming(false);
+      return descriptionRef.current; // Return whatever we got before the error
+    }
+  };
 
   useEffect(() => {
     audioContext.current = new (window.AudioContext || window.webkitAudioContext)();
@@ -179,7 +454,7 @@ const SpeakingOverlay = ({ onClose, image }) => {
     console.log('Starting voice conversation...');
 
     try {
-      client.current = new W3CWebSocket('ws://localhost:3001');
+      client.current = new W3CWebSocket('ws://localhost:3005');
 
       client.current.onopen = () => {
         console.log('WebSocket Client Connected');
@@ -289,43 +564,64 @@ const SpeakingOverlay = ({ onClose, image }) => {
 
       try {
         setIsResponding(true);
-        
+
         // Get transcription
         const transcription = await openai.audio.transcriptions.create({
           file: file,
           model: "whisper-1",
         });
 
-        // Update messages with user's input
-        const updatedMessages = [
-          ...messages,
-          { role: "user", content: transcription.text }
-        ];
+        const userMessage = { role: "user", content: transcription.text };
+        const updatedMessages = [...messages, userMessage];
         setMessages(updatedMessages);
 
-        // Get GPT response with streaming
-        const stream = await openai.chat.completions.create({
-          model: "gpt-4",
+        // Get chat completion
+        const completion = await openai.chat.completions.create({
+          model: "gpt-4o-mini",
           messages: updatedMessages,
-          stream: true,
+          tools: tools,
         });
 
-        let fullResponse = '';
-        setTranscript(''); // Clear previous response
+        const assistantMessage = completion.choices[0].message;
 
-        for await (const chunk of stream) {
-          const content = chunk.choices[0]?.delta?.content || '';
-          if (content) {
-            fullResponse += content;
-            setTranscript(current => current + content);
+        // Handle potential tool calls (function calls)
+        if (assistantMessage.tool_calls) {
+          const toolCall = assistantMessage.tool_calls[0];
+          
+          if (toolCall.function.name === 'visualize_data') {
+            const args = JSON.parse(toolCall.function.arguments);
+            const functionResult = await visualize_data(args.description);
+
+            // Add function result to messages
+            const toolMessage = {
+              role: "tool",
+              content: functionResult,
+              tool_call_id: toolCall.id,
+            };
+
+            // Get final response with function result
+            const finalCompletion = await openai.chat.completions.create({
+              model: "gpt-4o-mini",
+              messages: [
+                ...updatedMessages,
+                assistantMessage,
+                toolMessage
+              ],
+            });
+
+            const finalResponse = finalCompletion.choices[0].message.content;
+            setTranscript(finalResponse);
+            setMessages(prev => [...prev, assistantMessage, toolMessage, finalCompletion.choices[0].message]);
+            await streamTextToSpeech(finalResponse);
           }
+        } else {
+          // No function call, just regular response
+          const response = assistantMessage.content;
+          setTranscript(response);
+          setMessages(prev => [...prev, assistantMessage]);
+          await streamTextToSpeech(response);
         }
 
-        // After getting full response, stream the audio
-        await streamTextToSpeech(fullResponse);
-
-        // Update messages with assistant's response
-        setMessages(prev => [...prev, { role: "assistant", content: fullResponse }]);
         setIsResponding(false);
 
       } catch (error) {
@@ -455,35 +751,87 @@ const SpeakingOverlay = ({ onClose, image }) => {
     }
   };
 
+  const toggleVisualPane = () => {
+    setIsVisualPaneOpen(!isVisualPaneOpen);
+  };
+
   return (
     <Overlay
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
-      <ToggleButton onClick={() => setIsVadMode(!isVadMode)}>
-        {isVadMode ? 'VAD Mode' : 'Manual Mode'}
-        <RecordingIndicator isRecording={isVadMode || isManualRecording} />
-      </ToggleButton>
-      <CloseButton onClick={onClose}>
-        <Icon icon="ph:x" style={{ fontSize: '24px' }} />
-      </CloseButton>
-      <CircleLarge
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ type: "spring", stiffness: 260, damping: 20 }}
-        image={image}
-      />
-      <SpeakingText>
-        {isVadMode 
-          ? (isListening ? 'Speak now' : 'Processing...') 
-          : isResponding 
-            ? 'Responding...'
-            : (isManualRecording ? 'Recording... (Release space to send)' : 'Press and hold space to speak')}
-      </SpeakingText>
-      <Transcript>
-        {transcript}
-      </Transcript>
+      <SplitLayout>
+        <MainPane>
+          <ToggleButton onClick={() => setIsVadMode(!isVadMode)}>
+            {isVadMode ? 'VAD Mode' : 'Manual Mode'}
+            <RecordingIndicator isRecording={isVadMode || isManualRecording} />
+          </ToggleButton>
+          {isVisualPaneOpen && (
+            <CollapseButton onClick={toggleVisualPane}>
+              <Icon icon="ph:arrow-right" style={{ fontSize: '24px' }} />
+            </CollapseButton>
+          )}
+          <CloseButton onClick={onClose}>
+            <Icon icon="ph:x" style={{ fontSize: '24px' }} />
+          </CloseButton>
+          <>
+            {/* <SoundWaveContainer>
+              <SoundWave isActive={isManualRecording || isResponding} />
+              <SoundWave isActive={isManualRecording || isResponding} />
+              <SoundWave isActive={isManualRecording || isResponding} />
+            </SoundWaveContainer> */}
+            <CircleLarge
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ type: "spring", stiffness: 260, damping: 20 }}
+              image={image}
+            />
+          </>
+          <SpeakingText>
+            {isVadMode 
+              ? (isListening ? 'Speak now' : 'Processing...') 
+              : isResponding 
+                ? 'Responding...'
+                : (isManualRecording ? 'Recording... (Release space to send)' : 'Press and hold space to speak')}
+          </SpeakingText>
+          <Transcript isVisualPaneOpen={isVisualPaneOpen}>
+            {transcript}
+          </Transcript>
+        </MainPane>
+        {isVisualPaneOpen && (
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            animate={{ opacity: 1, width: '50%' }}
+            exit={{ opacity: 0, width: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            <VisualPane>
+              <VisualHeader>{visualizedHeader}</VisualHeader>
+              <VisualImage 
+                src={visualizedImage}
+                alt="Visualization"
+              />
+              <RichTextExplanationBox>
+                <div className="markdown-body">
+                  <Markdown>
+                    {visualizedDescription}
+                  </Markdown>
+                </div>
+                {isDescriptionStreaming && (
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 1, 0] }}
+                    transition={{ duration: 1, repeat: Infinity }}
+                  >
+                    ▋
+                  </motion.span>
+                )}
+              </RichTextExplanationBox>
+            </VisualPane>
+          </motion.div>
+        )}
+      </SplitLayout>
     </Overlay>
   );
 };

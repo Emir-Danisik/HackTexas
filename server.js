@@ -70,7 +70,7 @@ wss.on('connection', (ws) => {
   });
 });
 
-const PORT = 3001;
+const PORT = 3005;
 server.listen(PORT, () => {
   console.log(`Proxy server running on port ${PORT}`);
 });
