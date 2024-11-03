@@ -122,6 +122,8 @@ const SpeakingOverlay = ({ onClose, image }) => {
   const [transcript, setTranscript] = useState('');
   const [isVadMode, setIsVadMode] = useState(false);
   const [isManualRecording, setIsManualRecording] = useState(false);
+  const [messages, setMessages] = useState([]);  // Add this state for chat history
+  const [isResponding, setIsResponding] = useState(false);
   const recorder = useRef(null);
   const client = useRef(null);
   const audioContext = useRef(null);
@@ -286,14 +288,49 @@ const SpeakingOverlay = ({ onClose, image }) => {
       const file = new File([audioBlob], 'recording.webm', { type: 'audio/webm' });
 
       try {
+        setIsResponding(true);
+        
+        // Get transcription
         const transcription = await openai.audio.transcriptions.create({
           file: file,
           model: "whisper-1",
         });
-        setTranscript(transcription.text);
-        console.log("Transcription:", transcription.text);
+
+        // Update messages with user's input
+        const updatedMessages = [
+          ...messages,
+          { role: "user", content: transcription.text }
+        ];
+        setMessages(updatedMessages);
+
+        // Get GPT response with streaming
+        const stream = await openai.chat.completions.create({
+          model: "gpt-4",
+          messages: updatedMessages,
+          stream: true,
+        });
+
+        let fullResponse = '';
+        setTranscript(''); // Clear previous response
+
+        for await (const chunk of stream) {
+          const content = chunk.choices[0]?.delta?.content || '';
+          if (content) {
+            fullResponse += content;
+            setTranscript(current => current + content);
+          }
+        }
+
+        // After getting full response, stream the audio
+        await streamTextToSpeech(fullResponse);
+
+        // Update messages with assistant's response
+        setMessages(prev => [...prev, { role: "assistant", content: fullResponse }]);
+        setIsResponding(false);
+
       } catch (error) {
-        console.error('Transcription error:', error);
+        console.error('Error:', error);
+        setIsResponding(false);
       }
     };
 
@@ -394,6 +431,30 @@ const SpeakingOverlay = ({ onClose, image }) => {
     }
   };
 
+  // Add this function to handle text-to-speech streaming
+  const streamTextToSpeech = async (text) => {
+    try {
+      const response = await openai.audio.speech.create({
+        model: "tts-1",
+        voice: "nova",
+        input: text,
+      });
+
+      // Convert the response to an audio buffer
+      const audioData = await response.arrayBuffer();
+      const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      const audioBuffer = await audioContext.decodeAudioData(audioData);
+      
+      // Play the audio
+      const source = audioContext.createBufferSource();
+      source.buffer = audioBuffer;
+      source.connect(audioContext.destination);
+      source.start(0);
+    } catch (error) {
+      console.error('Error streaming TTS:', error);
+    }
+  };
+
   return (
     <Overlay
       initial={{ opacity: 0 }}
@@ -416,7 +477,9 @@ const SpeakingOverlay = ({ onClose, image }) => {
       <SpeakingText>
         {isVadMode 
           ? (isListening ? 'Speak now' : 'Processing...') 
-          : (isManualRecording ? 'Recording... (Release space to send)' : 'Press and hold space to speak')}
+          : isResponding 
+            ? 'Responding...'
+            : (isManualRecording ? 'Recording... (Release space to send)' : 'Press and hold space to speak')}
       </SpeakingText>
       <Transcript>
         {transcript}
