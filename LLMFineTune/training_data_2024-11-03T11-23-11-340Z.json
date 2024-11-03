@@ -1,0 +1,1321 @@
+{
+  "metadata": {
+    "generatedAt": "2024-11-03T11-23-11-334Z",
+    "totalArticles": 100,
+    "topicsCovered": [
+      "AI and Machine Learning",
+      "Quantum Computing and Information",
+      "Climate Science and Atmospheric Physics",
+      "Neuroscience and Neural Computing",
+      "Cryptography and Security",
+      "Genomics and Bioinformatics",
+      "Robotics and Automation",
+      "Computer Networks and Internet Architecture",
+      "Renewable Energy and Applied Physics",
+      "Biomolecular Science and Drug Development"
+    ],
+    "averageScore": 88.79
+  },
+  "data": [
+    {
+      "article": {
+        "title": "Bridging Geometric States via Geometric Diffusion Bridge",
+        "authors": "Shengjie Luo, Yixian Xu, Di He, Shuxin Zheng, Tie-Yan Liu, Liwei Wang",
+        "summary": "The accurate prediction of geometric state evolution in complex systems is\ncritical for advancing scientific domains such as quantum chemistry and\nmaterial modeling. Traditional experimental and computational methods face\nchallenges in terms of environmental constraints and computational demands,\nwhile current deep learning approaches still fall short in terms of precision\nand generality. In this work, we introduce the Geometric Diffusion Bridge\n(GDB), a novel generative modeling framework that accurately bridges initial\nand target geometric states. GDB leverages a probabilistic approach to evolve\ngeometric state distributions, employing an equivariant diffusion bridge\nderived by a modified version of Doob's $h$-transform for connecting geometric\nstates. This tailored diffusion process is anchored by initial and target\ngeometric states as fixed endpoints and governed by equivariant transition\nkernels. Moreover, trajectory data can be seamlessly leveraged in our GDB\nframework by using a chain of equivariant diffusion bridges, providing a more\ndetailed and accurate characterization of evolution dynamics. Theoretically, we\nconduct a thorough examination to confirm our framework's ability to preserve\njoint distributions of geometric states and capability to completely model the\nunderlying dynamics inducing trajectory distributions with negligible error.\nExperimental evaluations across various real-world scenarios show that GDB\nsurpasses existing state-of-the-art approaches, opening up a new pathway for\naccurately bridging geometric states and tackling crucial scientific challenges\nwith improved accuracy and applicability.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24220v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Teaching Embodied Reinforcement Learning Agents: Informativeness and\n  Diversity of Language Use",
+        "authors": "Jiajun Xi, Yinong He, Jianing Yang, Yinpei Dai, Joyce Chai",
+        "summary": "In real-world scenarios, it is desirable for embodied agents to have the\nability to leverage human language to gain explicit or implicit knowledge for\nlearning tasks. Despite recent progress, most previous approaches adopt simple\nlow-level instructions as language inputs, which may not reflect natural human\ncommunication. It's not clear how to incorporate rich language use to\nfacilitate task learning. To address this question, this paper studies\ndifferent types of language inputs in facilitating reinforcement learning (RL)\nembodied agents. More specifically, we examine how different levels of language\ninformativeness (i.e., feedback on past behaviors and future guidance) and\ndiversity (i.e., variation of language expressions) impact agent learning and\ninference. Our empirical results based on four RL benchmarks demonstrate that\nagents trained with diverse and informative language feedback can achieve\nenhanced generalization and fast adaptation to new tasks. These findings\nhighlight the pivotal role of language use in teaching embodied agents new\ntasks in an open world. Project website:\nhttps://github.com/sled-group/Teachable_RL",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24218v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "Understanding Optimization in Deep Learning with Central Flows",
+        "authors": "Jeremy M. Cohen, Alex Damian, Ameet Talwalkar, Zico Kolter, Jason D. Lee",
+        "summary": "Optimization in deep learning remains poorly understood, even in the simple\nsetting of deterministic (i.e. full-batch) training. A key difficulty is that\nmuch of an optimizer's behavior is implicitly determined by complex oscillatory\ndynamics, referred to as the \"edge of stability.\" The main contribution of this\npaper is to show that an optimizer's implicit behavior can be explicitly\ncaptured by a \"central flow:\" a differential equation which models the\ntime-averaged optimization trajectory. We show that these flows can empirically\npredict long-term optimization trajectories of generic neural networks with a\nhigh degree of numerical accuracy. By interpreting these flows, we reveal for\nthe first time 1) the precise sense in which RMSProp adapts to the local loss\nlandscape, and 2) an \"acceleration via regularization\" mechanism, wherein\nadaptive optimizers implicitly navigate towards low-curvature regions in which\nthey can take larger steps. This mechanism is key to the efficacy of these\nadaptive optimizers. Overall, we believe that central flows constitute a\npromising tool for reasoning about optimization in deep learning.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24206v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Zonal RL-RRT: Integrated RL-RRT Path Planning with Collision Probability\n  and Zone Connectivity",
+        "authors": "AmirMohammad Tahmasbi, MohammadSaleh Faghfoorian, Saeed Khodaygan, Aniket Bera",
+        "summary": "Path planning in high-dimensional spaces poses significant challenges,\nparticularly in achieving both time efficiency and a fair success rate. To\naddress these issues, we introduce a novel path-planning algorithm, Zonal\nRL-RRT, that leverages kd-tree partitioning to segment the map into zones while\naddressing zone connectivity, ensuring seamless transitions between zones. By\nbreaking down the complex environment into multiple zones and using Q-learning\nas the high-level decision-maker, our algorithm achieves a 3x improvement in\ntime efficiency compared to basic sampling methods such as RRT and RRT* in\nforest-like maps. Our approach outperforms heuristic-guided methods like BIT*\nand Informed RRT* by 1.5x in terms of runtime while maintaining robust and\nreliable success rates across 2D to 6D environments. Compared to learning-based\nmethods like NeuralRRT* and MPNetSMP, as well as the heuristic RRT*J, our\nalgorithm demonstrates, on average, 1.5x better performance in the same\nenvironments. We also evaluate the effectiveness of our approach through\nsimulations of the UR10e arm manipulator in the MuJoCo environment. A key\nobservation of our approach lies in its use of zone partitioning and\nReinforcement Learning (RL) for adaptive high-level planning allowing the\nalgorithm to accommodate flexible policies across diverse environments, making\nit a versatile tool for advanced path planning.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24205v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "DiffPano: Scalable and Consistent Text to Panorama Generation with\n  Spherical Epipolar-Aware Diffusion",
+        "authors": "Weicai Ye, Chenhao Ji, Zheng Chen, Junyao Gao, Xiaoshui Huang, Song-Hai Zhang, Wanli Ouyang, Tong He, Cairong Zhao, Guofeng Zhang",
+        "summary": "Diffusion-based methods have achieved remarkable achievements in 2D image or\n3D object generation, however, the generation of 3D scenes and even\n$360^{\\circ}$ images remains constrained, due to the limited number of scene\ndatasets, the complexity of 3D scenes themselves, and the difficulty of\ngenerating consistent multi-view images. To address these issues, we first\nestablish a large-scale panoramic video-text dataset containing millions of\nconsecutive panoramic keyframes with corresponding panoramic depths, camera\nposes, and text descriptions. Then, we propose a novel text-driven panoramic\ngeneration framework, termed DiffPano, to achieve scalable, consistent, and\ndiverse panoramic scene generation. Specifically, benefiting from the powerful\ngenerative capabilities of stable diffusion, we fine-tune a single-view\ntext-to-panorama diffusion model with LoRA on the established panoramic\nvideo-text dataset. We further design a spherical epipolar-aware multi-view\ndiffusion model to ensure the multi-view consistency of the generated panoramic\nimages. Extensive experiments demonstrate that DiffPano can generate scalable,\nconsistent, and diverse panoramic images with given unseen text descriptions\nand camera poses.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24203v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Length-Induced Embedding Collapse in Transformer-based Models",
+        "authors": "Yuqi Zhou, Sunhao Dai, Zhanshuo Cao, Xiao Zhang, Jun Xu",
+        "summary": "Text embeddings enable various applications, but their performance\ndeteriorates on longer texts. In this paper, we find that the performance\ndegradation is due to a phenomenon called Length Collapse, where longer text\nembeddings collapse into a narrow space. This collapse results in a\ndistributional inconsistency between embeddings of different text lengths,\nultimately hurting the performance of downstream tasks. Theoretically, by\nconsidering the self-attention mechanism inherently functions as a low-pass\nfilter, we prove that long sequences increase the attenuation rate of the\nlow-pass filter effect of the self-attention mechanism. With layers going\ndeeper, excessive low-pass filtering causes the token signals to retain only\ntheir Direct-Current (DC) component, which means the input token feature maps\nwill collapse into a narrow space, especially in long texts. Based on the above\nanalysis, we propose to mitigate the undesirable length collapse limitation by\nintroducing a temperature in softmax(), which achieves a higher low-filter\nattenuation rate. The tuning-free method, called TempScale, can be plugged into\nmultiple transformer-based embedding models. Empirically, we demonstrate that\nTempScale can improve existing embedding models, especially on long text\ninputs, bringing up to 0.53% performance gains on 40 datasets from Massive Text\nEmbedding Benchmark (MTEB) and 0.82% performance gains on 4 datasets from\nLongEmbed, which specifically focuses on long context retrieval.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24200v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Chasing Better Deep Image Priors between Over- and\n  Under-parameterization",
+        "authors": "Qiming Wu, Xiaohan Chen, Yifan Jiang, Zhangyang Wang",
+        "summary": "Deep Neural Networks (DNNs) are well-known to act as over-parameterized deep\nimage priors (DIP) that regularize various image inverse problems. Meanwhile,\nresearchers also proposed extremely compact, under-parameterized image priors\n(e.g., deep decoder) that are strikingly competent for image restoration too,\ndespite a loss of accuracy. These two extremes push us to think whether there\nexists a better solution in the middle: between over- and under-parameterized\nimage priors, can one identify \"intermediate\" parameterized image priors that\nachieve better trade-offs between performance, efficiency, and even preserving\nstrong transferability? Drawing inspirations from the lottery ticket hypothesis\n(LTH), we conjecture and study a novel \"lottery image prior\" (LIP) by\nexploiting DNN inherent sparsity, stated as: given an over-parameterized\nDNN-based image prior, it will contain a sparse subnetwork that can be trained\nin isolation, to match the original DNN's performance when being applied as a\nprior to various image inverse problems. Our results validate the superiority\nof LIPs: we can successfully locate the LIP subnetworks from over-parameterized\nDIPs at substantial sparsity ranges. Those LIP subnetworks significantly\noutperform deep decoders under comparably compact model sizes (by often fully\npreserving the effectiveness of their over-parameterized counterparts), and\nthey also possess high transferability across different images as well as\nrestoration task types. Besides, we also extend LIP to compressive sensing\nimage reconstruction, where a pre-trained GAN generator is used as the prior\n(in contrast to untrained DIP or deep decoder), and confirm its validity in\nthis setting too. To our best knowledge, this is the first time that LTH is\ndemonstrated to be relevant in the context of inverse problems or image priors.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24187v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "DexMimicGen: Automated Data Generation for Bimanual Dexterous\n  Manipulation via Imitation Learning",
+        "authors": "Zhenyu Jiang, Yuqi Xie, Kevin Lin, Zhenjia Xu, Weikang Wan, Ajay Mandlekar, Linxi Fan, Yuke Zhu",
+        "summary": "Imitation learning from human demonstrations is an effective means to teach\nrobots manipulation skills. But data acquisition is a major bottleneck in\napplying this paradigm more broadly, due to the amount of cost and human effort\ninvolved. There has been significant interest in imitation learning for\nbimanual dexterous robots, like humanoids. Unfortunately, data collection is\neven more challenging here due to the challenges of simultaneously controlling\nmultiple arms and multi-fingered hands. Automated data generation in simulation\nis a compelling, scalable alternative to fuel this need for data. To this end,\nwe introduce DexMimicGen, a large-scale automated data generation system that\nsynthesizes trajectories from a handful of human demonstrations for humanoid\nrobots with dexterous hands. We present a collection of simulation environments\nin the setting of bimanual dexterous manipulation, spanning a range of\nmanipulation behaviors and different requirements for coordination among the\ntwo arms. We generate 21K demos across these tasks from just 60 source human\ndemos and study the effect of several data generation and policy learning\ndecisions on agent performance. Finally, we present a real-to-sim-to-real\npipeline and deploy it on a real-world humanoid can sorting task. Videos and\nmore are at https://dexmimicgen.github.io/",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24185v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Constraint Back-translation Improves Complex Instruction Following of\n  Large Language Models",
+        "authors": "Yunjia Qi, Hao Peng, Xiaozhi Wang, Bin Xu, Lei Hou, Juanzi Li",
+        "summary": "Large language models (LLMs) struggle to follow instructions with complex\nconstraints in format, length, etc. Following the conventional\ninstruction-tuning practice, previous works conduct post-training on complex\ninstruction-response pairs generated by feeding complex instructions to\nadvanced LLMs. However, even advanced LLMs cannot follow complex instructions\nwell, thus limiting the quality of generated data. In this work, we find that\nexisting datasets inherently contain implicit complex constraints and propose a\nnovel data generation technique, constraint back-translation. Specifically, we\ntake the high-quality instruction-response pairs in existing datasets and only\nadopt advanced LLMs to add complex constraints already met by the responses to\nthe instructions, which naturally reduces costs and data noise. In the\nexperiments, we adopt Llama3-70B-Instruct to back-translate constraints and\ncreate a high-quality complex instruction-response dataset, named CRAB. We\npresent that post-training on CRAB improves multiple backbone LLMs' complex\ninstruction-following ability, evaluated on extensive instruction-following\nbenchmarks. We further find that constraint back-translation also serves as a\nuseful auxiliary training objective in post-training. Our code, data, and\nmodels will be released to facilitate future research.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24175v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Leveraging Large Language Models for Code Translation and Software\n  Development in Scientific Computing",
+        "authors": "Akash Dhruv, Anshu Dubey",
+        "summary": "The emergence of foundational models and generative artificial intelligence\n(GenAI) is poised to transform productivity in scientific computing, especially\nin code development, refactoring, and translating from one programming language\nto another. However, because the output of GenAI cannot be guaranteed to be\ncorrect, manual intervention remains necessary. Some of this intervention can\nbe automated through task-specific tools, alongside additional methodologies\nfor correctness verification and effective prompt development. We explored the\napplication of GenAI in assisting with code translation, language\ninteroperability, and codebase inspection within a legacy Fortran codebase used\nto simulate particle interactions at the Large Hadron Collider (LHC). In the\nprocess, we developed a tool, CodeScribe, which combines prompt engineering\nwith user supervision to establish an efficient process for code conversion. In\nthis paper, we demonstrate how CodeScribe assists in converting Fortran code to\nC++, generating Fortran-C APIs for integrating legacy systems with modern C++\nlibraries, and providing developer support for code organization and algorithm\nimplementation. We also address the challenges of AI-driven code translation\nand highlight its benefits for enhancing productivity in scientific computing\nworkflows.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24119v1",
+        "category": "cs.AI",
+        "topic": "AI and Machine Learning"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Error Threshold of SYK Codes from Strong-to-Weak Parity Symmetry\n  Breaking",
+        "authors": "Jaewon Kim, Ehud Altman, Jong Yeon Lee",
+        "summary": "Quantum error correction (QEC) codes are fundamentally linked to quantum\nphases of matter: the degenerate ground state manifold corresponds to the code\nspace, while topological excitations represent error syndromes. Building on\nthis concept, the Sachdev-Ye-Kitaev (SYK) model, characterized by its extensive\nquasi-ground state degeneracy, serves as a constant rate approximate QEC code.\nIn this work, we study the impacts of decoherence on the information-theoretic\ncapacity of SYK models and their variants. Such a capacity is closely tied to\ntraversable wormholes via its thermofield double state, which theoretically\nenables the teleportation of information across a black hole. We calculate the\ncoherent information in the maximally entangled quasi-ground state space of the\nSYK models under the fermion parity breaking and parity conserving noise.\nInterestingly, we find that under the strong fermion parity symmetric noise,\nthe mixed state undergoes the strong to weak spontaneous symmetry breaking of\nfermion parity, which also corresponds to the information-theoretic transition.\nOur results highlight the degradation of wormhole traversability in realistic\nquantum scenarios, as well as providing critical insights into the behavior of\napproximate constant-rate QEC codes under decoherence.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24225v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Revisiting Joule-expansion experiments with a quantum gas",
+        "authors": "Christopher J. Ho, Simon M. Fischer, Gevorg Martirosyan, Sebastian J. Morris, Jiří Etrych, Christoph Eigen, Zoran Hadzibabic",
+        "summary": "We revisit the classic Joule-expansion experiments, now with a\nquantum-degenerate atomic Bose gas. In contrast to the classical-gas\nexperiments, where no temperature change was measured, here we observe both\ncooling and heating effects, which arise, respectively, due to quantum\nstatistics and inter-particle interactions. Our observations are reproduced in\nnumerical calculations within the Hartree-Fock approximation.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24217v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 82
+    },
+    {
+      "article": {
+        "title": "Diagnosing electronic phases of matter using photonic correlation\n  functions",
+        "authors": "Gautam Nambiar, Andrey Grankin, Mohammad Hafezi",
+        "summary": "In the past couple of decades, there have been significant advances in\nmeasuring quantum properties of light, such as quadratures of squeezed light\nand single-photon counting. Here, we explore whether such tools can be\nleveraged to probe electronic correlations in the many-body quantum regime.\nSpecifically, we show that it is possible to probe certain spin, charge, and\ntopological orders in an electronic system by measuring the quadrature and\ncorrelation functions of photons scattered off it. We construct a mapping from\nthe correlation functions of the scattered photons to those of a correlated\ninsulator, particularly for Mott insulators described by a single-band Hubbard\nmodel at half-filling. We show how frequency filtering before photodetection\nplays a crucial role in determining this mapping. If the ground state of the\ninsulator is a gapped spin liquid, we show that a $G^{(2)}$ (two-photon\ncoherence) measurement can detect the presence of anyonic excitations with\nfractional mutual statistics. We also show that homodyne measurements can be\nused to detect expectation values of static spin chirality operators on both\nthe kagome and triangular lattices, thus being useful in detecting chiral spin\nliquids. Moreover, a slew of hitherto unmeasured spin-spin and spin-charge\ncorrelation functions of the material can be extracted from photonic\ncorrelations. This work opens up access to probe correlated materials, beyond\nthe linear response paradigm, by detecting quantum properties of scattered\nlight.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24215v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Measurement-invisible quantum correlations in scrambling dynamics",
+        "authors": "Alan Sherry, Sthitadhi Roy",
+        "summary": "Scrambling unitary dynamics in a quantum system transmutes local quantum\ninformation into a non-local web of correlations which manifests itself in a\ncomplex spatio-temporal pattern of entanglement. In such a context, we show\nthere can exist three distinct dynamical phases characterised by qualitatively\ndifferent forms of quantum correlations between two disjoint subsystems of the\nsystem. Transitions between these phases are driven by the relative sizes of\nthe subsystems and the degree scrambling that the dynamics effects. Besides a\nphase which has no quantum correlations as manifested by vanishing entanglement\nbetween the parts and a phase which has non-trivial quantum correlations\nquantified by a finite entanglement monotone, we reveal a new phase transition\nwithin the entangled phase which separates phases wherein the quantum\ncorrelations are invisible or visible to measurements on one of the subsystems.\nThis is encoded in the qualitatively different properties of the ensemble of\nstates on one of the subsystems conditioned on the various measurement outcomes\non the other subsystem. This provides a new characterisation of entanglement\nphases in terms of their response to measurements instead of the more\nubiquitous measurement-induced entanglement transitions. Our results have\nimplications for the kind of tasks that can be performed using measurement\nfeedback within the framework of quantum interactive dynamics.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24212v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "Improved bounds for testing low stabilizer complexity states",
+        "authors": "Saeed Mehraban, Mehrdad Tahmasbi",
+        "summary": "Stabilizer states are fundamental families of quantum states with crucial\napplications such as error correction and simulation of quantum circuits. In\nthis paper, we study the problem of testing how close or far a quantum state is\nto a stabilizer state. We make two contributions: First, we improve the\nstate-of-the-art parameters for the tolerant testing of stabilizer states. In\nparticular, we show that there is an efficient quantum primitive to distinguish\nif the maximum fidelity of a quantum state with a stabilizer state is $\\geq\n\\epsilon_1$ or $\\leq \\epsilon_2$, given one of them is the case, provided that\n$\\epsilon_2 \\leq \\epsilon_1^{O(1)}$. Previously, the best bound known for this\nproblem assumed $\\epsilon_2 \\leq e^{- 1/\\epsilon^{O(1)}_1}$\n\\cite{arunachalam2024tolerant} and assumed a conjecture in additive\ncombinatorics; improved bounds only existed for phase states. Our result does\nnot rely on any conjectures. Our proof technique extends the toolsets developed\nin \\cite{arunachalam2024tolerant} by applying a random Clifford map which\nbalances the characteristic function of a quantum state, enabling the use of\nstandard proof techniques from higher-order Fourier analysis for Boolean\nfunctions \\cite{hatami2019higher, Samorodnitsky2007}, where improved testing\nbounds are available.\n  Second, we study the problem of testing low stabilizer rank states. We show\nthat if for an infinite family of quantum states stabilizer rank is lower than\na constant independent of system size, then stabilizer fidelity is lower\nbounded by an absolute constant. Using a result of \\cite{grewal2022low}, one of\nthe implications of this result is that low approximate stabilizer rank states\nare not pseudo-random.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24202v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "The time-dependent bivariational principle: Theoretical foundation for\n  real-time propagation methods of coupled-cluster type",
+        "authors": "Simen Kvaal, Håkon Richard Fredheim, Mads Greisen Højlund, Thomas Bondo Pedersen",
+        "summary": "Real-time propagation methods for chemistry and physics are invariably\nformulated using variational techniques. The time-dependent bivariational\nprinciple (TD-BIVP) is known to be the proper framework for coupled-cluster\ntype methods, and is here studied from a differential geometric point of view.\nIt is demonstrated how two distinct classical Hamilton's equations of motion\narise from considering the real and imaginary parts of the action integral. The\nlatter is new, and can in principle be used to develop novel propagation\nmethods. Conservation laws and Poisson brackets are introduced, completing the\nanalogy with classical mechanics. An overview of established real-time\npropagation methods is given in the context of our formulation of the TD-BIVP,\nnamely time-dependent traditional coupled-cluster theory, orbital-adaptive\ncoupled-cluster theory, time-dependent orthogonal optimized coupled-cluster\ntheory, and equation-of-motion coupled cluster theory.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24192v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "Untelegraphable Encryption and its Applications",
+        "authors": "Jeffrey Champion, Fuyuki Kitagawa, Ryo Nishimaki, Takashi Yamakawa",
+        "summary": "We initiate the study of untelegraphable encryption (UTE), founded on the\nno-telegraphing principle, which allows an encryptor to encrypt a message such\nthat a binary string representation of the ciphertext cannot be decrypted by a\nuser with the secret key, a task that is classically impossible. This is a\nnatural relaxation of unclonable encryption, inspired by the recent work of\nNehoran and Zhandry (ITCS 2024), who showed a computational separation between\nthe no-cloning and no-telegraphing principles. In this work, we define and\nconstruct UTE information-theoretically in the plain model. Building off this,\nwe give several applications of UTE and study the interplay of UTE with UE and\nwell-studied tasks in quantum state learning, yielding the following\ncontributions:\n  - A construction of collusion-resistant UTE from standard secret-key\nencryption. We additionally show that hyper-efficient shadow tomography (HEST)\nis impossible assuming collusion-resistant UTE exists. By considering a\nrelaxation of collusion-resistant UTE, we are able to show the impossibility of\nHEST assuming only pseudorandom state generators (which may not imply one-way\nfunctions). This almost completely answers an open inquiry of Aaronson (STOC\n2019).\n  - A construction of UTE from a one-shot message authentication code in the\nclassical oracle model, such that there is an explicit attack that breaks UE\nsecurity for an unbounded polynomial number of decryptors.\n  - A construction of everlasting secure collusion-resistant UTE, where the\ndecryptor adversary can run in unbounded time, in the quantum random oracle\nmodel (QROM), and formal evidence that a construction in the plain model is a\nchallenging task. We additionally show that HEST with unbounded post-processing\ntime is impossible in the QROM.\n  - Constructions (and definitions) of untelegraphable secret sharing and\nuntelegraphable functional encryption.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24189v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "From broadband biphotons to frequency combs via spectral compression\n  with time-varying cavities",
+        "authors": "Karthik V. Myilswamy, Jordan A. Gaines, Jason D. McKinney, Joseph M. Lukens, Andrew M. Weiner",
+        "summary": "Biphoton frequency combs are promising resources for quantum networking due\nin large part to their compatibility with the telecommunication infrastructure.\nIn this work, we propose a method to periodically compress broadband\nfrequency-entangled photons into biphoton frequency combs by utilizing\ntime-varying linear cavities. Our approach hinges on rapid modulation of the\ninput cavity coupling, yielding high spectral purity in each output comb line\nsimilar to that achieved with narrowband filters, but without the associated\nloss in flux. We examine the dependence of spectral purity and compression on\ncoupling strength, cavity loss, and switching speed, finding realistic regimes\nsupporting purities in excess of 0.999 and peak enhancement factors of 100 and\nbeyond.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24188v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "2D magnetic stability",
+        "authors": "Douglas Lundholm",
+        "summary": "This article is a contribution to the proceedings of the 33rd/35th\nInternational Colloquium on Group Theoretical Methods in Physics (ICGTMP,\nGroup33/35) held in Cotonou, Benin, July 15-19, 2024. The stability of matter\nis an old and mathematically difficult problem, relying both on the uncertainty\nprinciple of quantum mechanics and on the exclusion principle of quantum\nstatistics. We consider here the stability of the self-interacting\nalmost-bosonic anyon gas, generalizing the Gross-Pitaevskii / nonlinear\nSchr\\\"odinger energy functionals to include magnetic self interactions. We show\nthat there is a type of supersymmetry in the model which holds only for higher\nvalues of the magnetic coupling but is broken for lower values, and that in the\nformer case supersymmetric ground states exist precisely at even-integer\nquantized values of the coupling. These states constitute a manifold of\nexplicit solitonic vortex solutions whose densities solve a generalized\nLiouville equation, and can be regarded as nonlinear generalizations of Landau\nlevels. The reported work is joint with Alireza Ataei and Dinh-Thi Nguyen and\nmakes an earlier analysis of self-dual abelian Chern-Simons-Higgs theory by\nJackiw and Pi, Hagen, and others, mathematically rigorous.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24156v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "On-Chip Verified Quantum Computation with an Ion-Trap Quantum Processing\n  Unit",
+        "authors": "Cica Gustiani, Dominik Leichtle, Daniel Mills, Jonathan Miller, Ross Grassie, Elham Kashefi",
+        "summary": "We present and experimentally demonstrate a novel approach to verification\nand benchmarking of quantum computing, implementing it on an ion-trap quantum\ncomputer. Unlike previous information-theoretically secure verification\nprotocols, which typically require quantum communication between client and\nserver, our approach is implemented entirely on-chip. This eliminates the need\nfor a quantum client and significantly enhances practicality.\n  We perform tomography to justify the additionally required assumption that\nthe noise is independent of the secret used to prepare the Server's\nsingle-qubit states. We quantify the soundness error which may be caused by\nresidual secret dependencies. We demonstrate our protocol on the 20-qubit\nQuantinuum H1-1 ion-trap quantum processing unit, using qubit measurements and\nresets to construct measurement patterns with up to 52 vertices. To our\nknowledge, these are the largest verified measurement-based quantum\ncomputations performed to date.\n  Our results pave the way for more accessible and efficient verification and\nbenchmarking strategies in near-term quantum devices, enabling robust\nperformance assessment without the added cost of external quantum\ninfrastructure.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24133v1",
+        "category": "quant-ph",
+        "topic": "Quantum Computing and Information"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "A physics-aware data-driven surrogate approach for fast atmospheric\n  radiative transfer inversion",
+        "authors": "Cristina Sgattoni, Luca Sgheri, Matthias Chung",
+        "summary": "FORUM (Far-infrared Outgoing Radiation Understanding and Monitoring) was\nselected in 2019 as the ninth Earth Explorer mission by the European Space\nAgency (ESA). Its primary objective is to collect interferometric measurements\nin the Far-InfraRed (FIR) spectral range, which accounts for 50\\% of Earth's\noutgoing longwave radiation emitted into space, and will be observed from space\nfor the first time. Accurate measurements of the FIR at the top of the\natmosphere are crucial for improving climate models. Current instruments are\ninsufficient, necessitating the development of advanced computational\ntechniques. To ensure the quality of the mission data, an End-to-End Simulator\n(E2ES) was developed to simulate the measurement process and evaluate the\neffects of instrument characteristics and environmental factors. The core\nchallenge of the mission is solving the retrieval problem, which involves\nestimating atmospheric properties from the radiance spectra observed by the\nsatellite. This problem is ill-posed and regularization techniques are\nnecessary. In this work, we present a novel and fast data-driven approach to\napproximate the inverse mapping. In the first phase, we generate an initial\napproximation of the inverse mapping using only simulated FORUM data. In the\nsecond phase, we improve this approximation by introducing climatological data\nas a priori information and using a neural network to estimate the optimal\nregularization parameters. While our approach does not match the precision of\nfull-physics retrieval methods, its key advantage is the ability to deliver\nresults almost instantaneously, making it highly suitable for real-time\napplications. Furthermore, the proposed method can provide more accurate a\npriori estimates for full-physics methods, thereby improving the overall\naccuracy of the retrieved atmospheric profiles.",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.22609v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Nonlocal, Pattern-aware Response and Feedback Framework for Regional\n  Climate Change",
+        "authors": "Parvathi Kooloth, Jian Lu, Yi Huang, Derek DeSantis, Yiling Huo, Fukai Liu, Hailong Wang",
+        "summary": "We devise a pattern-aware feedback framework for representing the forced\nclimate response using a suite of Green's function experiments with solar\nradiation perturbations. By considering the column energy balance, a\ncomprehensive linear response function (CLRF) forimportant climate variables\nand feedback quantities such as moist static energy, sea surface temperature,\nalbedo, cloud optical depth, and lapse rate is learned from Green's function\ndata. The learned CLRF delineates the effects of the energy diffusion in both\nthe ocean and atmosphere and the pattern-aware feedbacks from the\naforementioned radiatively active processes. The CLRF can then be decomposed\ninto forcing-response mode pairs which are in turn used to construct a\nreduced-order model (ROM) describing the dominant dynamics of climate\nresponses. These mode pairs capture nonlocal effects and teleconnections in the\nclimate and thus, make the ROM apt for capturing regional features of climate\nchange response. A key observation is that the CLRF captures the polar\namplified response as the most excitable mode of the climate system and this\nmode is explainable in the data-learned pattern-aware feedback framework. The\nROM can be used for predicting the response for a given forcing and for\nreconstructing the forcing from a given response; we demonstrate these\ncapabilities for independent forcing pattern.",
+        "published": "2024-10-29",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.22450v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "PACER: Physics Informed Uncertainty Aware Climate Emulator",
+        "authors": "Hira Saleem, Flora Salim, Cormac Purcell",
+        "summary": "Climate models serve as critical tools for evaluating the effects of climate\nchange and projecting future climate scenarios. However, the reliance on\nnumerical simulations of physical equations renders them computationally\nintensive and inefficient. While deep learning methodologies have made\nsignificant progress in weather forecasting, they are still unstable for\nclimate emulation tasks. Here, we propose PACER, a lightweight 684K parameter\nPhysics Informed Uncertainty Aware Climate Emulator. PACER emulates temperature\nand precipitation stably for 86 years while only being trained on greenhouse\ngas emissions data. We incorporate a fundamental physical law of\nadvection-diffusion in PACER accounting for boundary conditions and empirically\nestimating the diffusion co-efficient and flow velocities from emissions data.\nPACER has been trained on 15 climate models provided by ClimateSet\noutperforming baselines across most of the climate models and advancing a new\nstate of the art in a climate diagnostic task.",
+        "published": "2024-10-29",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.21657v2",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Assessment of Abrupt Shifts in CMIP6 Models using Edge Detection",
+        "authors": "Sjoerd Terpstra, Swinda K. J. Falkena, Robbin Bastiaansen, Sebastian Bathiany, Henk A. Dijkstra, Anna S. von der Heydt",
+        "summary": "Research over the past decade has shown that multiple elements of the climate\nsystem, such as the Arctic Winter sea ice or the Amazon rainforest, could\nundergo abrupt shifts, but there are large uncertainties regarding their timing\nand spatial extent. In this study we investigated when and where abrupt shifts\noccur in the latest generation of climate models (CMIP6) under a scenario of a\n1% annual increase in CO$_2$. We considered 82 ocean, atmosphere, and land\nvariables across 57 models. We used a Canny edge detection method -- adapted\nfor spatiotemporal dimensions -- to detect abrupt shifts occurring on time\nscales from years to decades. Then, we performed a connected component analysis\nto quantify the spatial extent of these shifts. The systems analyzed include\nthe North Atlantic subpolar gyre, Tibetan Plateau, land permafrost, Amazon\nrainforest, Antarctic sea ice, monsoon systems, Arctic summer sea ice, Arctic\nwinter sea ice, and Barents sea ice. With the exception of the monsoons\nsystems, we found abrupt shifts in multiple models per system. We observed a\nconsiderable variation across the different CMIP6 models in terms of timing and\nspatial extent. Higher levels of global warming increased the risk of abrupt\nshifts in CMIP6 models. Even at a global warming level of 1.5 $^\\circ\n\\text{C}$, six out of ten studied climate subsystems showed abrupt shifts that\ncover a substantial area in multiple models.",
+        "published": "2024-10-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.19498v2",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Modulated Adaptive Fourier Neural Operators for Temporal Interpolation\n  of Weather Forecasts",
+        "authors": "Jussi Leinonen, Boris Bonev, Thorsten Kurth, Yair Cohen",
+        "summary": "Weather and climate data are often available at limited temporal resolution,\neither due to storage limitations, or in the case of weather forecast models\nbased on deep learning, their inherently long time steps. The coarse temporal\nresolution makes it difficult to capture rapidly evolving weather events. To\naddress this limitation, we introduce an interpolation model that reconstructs\nthe atmospheric state between two points in time for which the state is known.\nThe model makes use of a novel network layer that modifies the adaptive Fourier\nneural operator (AFNO), which has been previously used in weather prediction\nand other applications of machine learning to physics problems. The modulated\nAFNO (ModAFNO) layer takes an embedding, here computed from the interpolation\ntarget time, as an additional input and applies a learned shift-scale operation\ninside the AFNO layers to adapt them to the target time. Thus, one model can be\nused to produce all intermediate time steps. Trained to interpolate between two\ntime steps 6 h apart, the ModAFNO-based interpolation model produces 1 h\nresolution intermediate time steps that are visually nearly indistinguishable\nfrom the actual corresponding 1 h resolution data. The model reduces the RMSE\nloss of reconstructing the intermediate steps by approximately 50% compared to\nlinear interpolation. We also demonstrate its ability to reproduce the\nstatistics of extreme weather events such as hurricanes and heat waves better\nthan 6 h resolution data. The ModAFNO layer is generic and is expected to be\napplicable to other problems, including weather forecasting with tunable lead\ntime.",
+        "published": "2024-10-24",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.18904v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Local and Remote Forcing Factors of Heatwave in India -A Reanalysis and\n  Adjoint model based study",
+        "authors": "Abhirup Banerjee, Armin Koehl, Frank Lunkeit, Detlef Stammer",
+        "summary": "Continental heatwaves can dramatically impact ecosystems and societies, e.g.,\nby leading to excess mortality, wildfires, and harvest failures. With a warming\nclimate, their impacts potentially intensify globally, but the Indian\nsubcontinent appears to be particularly vulnerable to such extreme events. In\nthis study, we use reanalysis and the adjoint of the atmospheric model, PlaSim,\nto identify drivers of heatwaves occurring April and May over north-central\nIndia. Reanalysis results suggest that the existence of high temperatures in\nthe study region is highly sensitive to the low local soil moisture which is\nobserved weeks before a heatwave commences. Soil moisture variability in\nnorthern India is influenced by moisture transport from the west during\nwinter--spring. Preceding dry soil moisture conditions can be associated with a\n`persistent jet' conditions linked to atmospheric dynamical changes in the\nNorth Atlantic region. An associated northward shift in the upper tropospheric\nzonal wind occurs approximately a month prior to the heatwaves, influencing the\narea and intensity of western disturbances embedded in the jet stream. This\nweakens the moisture flow from the north of the Arabian Sea, further reducing\nsoil moisture levels and creating conditions conducive to heatwaves. An adjoint\nsensitivity analysis and forward model perturbation experiments confirm the\ncausal relationships for the proposed heatwave development mechanism over\nnorth-central India, identifying the remote influence of North Atlantic sea\nsurface temperature variability on extreme temperatures in India. Our findings\nhighlight the complex interplay of local and remote factors in heatwave\ndevelopment over India.",
+        "published": "2024-10-22",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.17083v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Projections of standardised energy indices in future climate scenarios",
+        "authors": "Edgar Dolores-Tesillos, Noelia Otero, Sam Allen",
+        "summary": "Renewable energy is becoming an increasingly important component of energy\nsystems. However, renewable energy production is heavily dependent on the\nprevailing weather conditions, which are changing as a result of climate\nchange. It is therefore necessary to build energy systems that are robust to\nenergy shortages caused by weather-dependent changes to energy demand and\nrenewable energy production. To design such systems, we must monitor how\nchanges in the climate are expected to influence future energy production and\ndemand; this is important for policymakers to decide when, where, and by how\nmuch renewable energy installed capacities should be increased, for example. In\nthis paper, we study the behaviour of standardised energy indices in future\nEuropean climate projections, and use this to monitor how characteristics of\nenergy production droughts in Europe are expected to change in the future. We\nuse these results to make suggestions regarding how the energy mix should be\nadapted in the future to decrease the risk of energy production droughts.",
+        "published": "2024-10-21",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.16556v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 82
+    },
+    {
+      "article": {
+        "title": "Deep Learning for Weather Forecasting: A CNN-LSTM Hybrid Model for\n  Predicting Historical Temperature Data",
+        "authors": "Yuhao Gong, Yuchen Zhang, Fei Wang, Chi-Han Lee",
+        "summary": "As global climate change intensifies, accurate weather forecasting has become\nincreasingly important, affecting agriculture, energy management, environmental\nprotection, and daily life. This study introduces a hybrid model combining\nConvolutional Neural Networks (CNNs) and Long Short-Term Memory (LSTM) networks\nto predict historical temperature data. CNNs are utilized for spatial feature\nextraction, while LSTMs handle temporal dependencies, resulting in\nsignificantly improved prediction accuracy and stability. By using Mean\nAbsolute Error (MAE) as the loss function, the model demonstrates excellent\nperformance in processing complex meteorological data, addressing challenges\nsuch as missing data and high-dimensionality. The results show a strong\nalignment between the prediction curve and test data, validating the model's\npotential in climate prediction. This study offers valuable insights for fields\nsuch as agriculture, energy management, and urban planning, and lays the\ngroundwork for future applications in weather forecasting under the context of\nglobal climate change.",
+        "published": "2024-10-19",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.14963v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 82
+    },
+    {
+      "article": {
+        "title": "Can AI weather models predict out-of-distribution gray swan tropical\n  cyclones?",
+        "authors": "Y. Qiang Sun, Pedram Hassanzadeh, Mohsen Zand, Ashesh Chattopadhyay, Jonathan Weare, Dorian S. Abbot",
+        "summary": "Predicting gray swan weather extremes, which are possible but so rare that\nthey are absent from the training dataset, is a major concern for AI\nweather/climate models. An important open question is whether AI models can\nextrapolate from weaker weather events present in the training set to stronger,\nunseen weather extremes. To test this, we train independent versions of the AI\nmodel FourCastNet on the 1979-2015 ERA5 dataset with all data, or with Category\n3-5 tropical cyclones (TCs) removed, either globally or only over the North\nAtlantic or Western Pacific basin. We then test these versions of FourCastNet\non 2018-2023 Category 5 TCs (gray swans). All versions yield similar accuracy\nfor global weather, but the one trained without Category 3-5 TCs cannot\naccurately forecast Category 5 TCs, indicating that these models cannot\nextrapolate from weaker storms. The versions trained without Category 3-5 TCs\nin one basin show some skill forecasting Category 5 TCs in that basin,\nsuggesting that FourCastNet can generalize across tropical basins. This is\nencouraging and surprising because regional information is implicitly encoded\nin inputs. No version satisfies gradient-wind balance, implying that enforcing\nsuch physical constraints may not improve generalizability to gray swans. Given\nthat current state-of-the-art AI weather/climate models have similar learning\nstrategies, we expect our findings to apply to other models and extreme events.\nOur work demonstrates that novel learning strategies are needed for AI\nweather/climate models to provide early warning or estimated statistics for the\nrarest, most impactful weather extremes.",
+        "published": "2024-10-19",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.14932v2",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "The cloud cover and meteorological parameters at the Lenghu site on the\n  Tibetan Plateau",
+        "authors": "Ruiyue Li, Fei He, Licai Deng, Xiaodian Chen, Fan Yang, Yong Zhao, Bo Zhang, Chunguang Zhang, Chen Yang, Tian Lan",
+        "summary": "The cloud cover and meteorological parameters serve as fundamental criteria\nfor the qualification of an astronomical observatory working in optical and\ninfrared wavelengths. In this paper, we present a systematic assessment of key\nmeteorological parameters at the Lenghu site. The datasets adopted in this\nstudy includes the meteorological parameters collected at the local weather\nstations at the site and in the Lenghu Town, the sky brightness at the local\nzenith acquired by the Sky Quality Meters and night sky all-sky images from a\ndigital camera, the ERA5 reanalysis database and global climate monitoring\ndata. From 2019 to 2023, the fractional observable time of photometric\ncondition is 69.70%, 74.97%, 70.26%, 74.27% and 65.12%, respectively. The\nfractional observing time is inversely correlated with surface air temperature,\nrelative humidity, precipitable water vapor, and dew temperature, demonstrating\nthat the observing conditions are influenced by these meteorological\nparameters. Large-scale air-sea interactions affect the climate at Lenghu site,\nwhich in fact delivers a clue to understand the irregularity of 2023.\nSpecifically, precipitable water vapor at Lenghu site is correlated to both the\nwesterly wind index and the summer North Atlantic Oscillation index, the yearly\naverage temperature of Lenghu site is observed to increase significantly during\nthe occurrence of a strong El Ni\\~no event and the relative humidity anomaly at\nLenghu site is correlated to the Pacific Decadal Oscillation index. The\ndecrease of fractional observing time in 2023 was due to the ongoing strong El\nNi\\~no event and relevant global climate change. We underscore the substantial\nrole of global climate change in regulating astronomical observing conditions\nand the necessity for long-term continuous monitoring of the astronomical\nmeteorological parameters at Lenghu site.",
+        "published": "2024-10-17",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.13306v1",
+        "category": "physics.ao-ph",
+        "topic": "Climate Science and Atmospheric Physics"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "Dynamical similarity analysis uniquely captures how computations develop\n  in RNNs",
+        "authors": "Quentin Guilhot, Jascha Achterberg, Michał Wójcik, Rui Ponte Costa",
+        "summary": "Methods for analyzing representations in neural systems are increasingly\npopular tools in neuroscience and mechanistic interpretability. Measures\ncomparing neural activations across conditions, architectures, and species give\nscalable ways to understand information transformation within different neural\nnetworks. However, recent findings show that some metrics respond to spurious\nsignals, leading to misleading results. Establishing benchmark test cases is\nthus essential for identifying the most reliable metric and potential\nimprovements. We propose that compositional learning in recurrent neural\nnetworks (RNNs) can provide a test case for dynamical representation alignment\nmetrics. Implementing this case allows us to evaluate if metrics can identify\nrepresentations that develop throughout learning and determine if\nrepresentations identified by metrics reflect the network's actual\ncomputations. Building both attractor and RNN based test cases, we show that\nthe recently proposed Dynamical Similarity Analysis (DSA) is more noise robust\nand reliably identifies behaviorally relevant representations compared to prior\nmetrics (Procrustes, CKA). We also demonstrate how such test cases can extend\nbeyond metric evaluation to study new architectures. Specifically, testing DSA\nin modern (Mamba) state space models suggests that these models, unlike RNNs,\nmay not require changes in recurrent dynamics due to their expressive hidden\nstates. Overall, we develop test cases that showcase how DSA's enhanced ability\nto detect dynamical motifs makes it highly effective for identifying ongoing\ncomputations in RNNs and revealing how networks learn tasks.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24070v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Generative forecasting of brain activity enhances Alzheimer's\n  classification and interpretation",
+        "authors": "Yutong Gao, Vince D. Calhoun, Robyn L. Miller",
+        "summary": "Understanding the relationship between cognition and intrinsic brain activity\nthrough purely data-driven approaches remains a significant challenge in\nneuroscience. Resting-state functional magnetic resonance imaging (rs-fMRI)\noffers a non-invasive method to monitor regional neural activity, providing a\nrich and complex spatiotemporal data structure. Deep learning has shown promise\nin capturing these intricate representations. However, the limited availability\nof large datasets, especially for disease-specific groups such as Alzheimer's\nDisease (AD), constrains the generalizability of deep learning models. In this\nstudy, we focus on multivariate time series forecasting of independent\ncomponent networks derived from rs-fMRI as a form of data augmentation, using\nboth a conventional LSTM-based model and the novel Transformer-based BrainLM\nmodel. We assess their utility in AD classification, demonstrating how\ngenerative forecasting enhances classification performance. Post-hoc\ninterpretation of BrainLM reveals class-specific brain network sensitivities\nassociated with AD.",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23515v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Nanoscale Connectomics Annotation Standards Framework",
+        "authors": "Nicole K. Guittari, Miguel E. Wimbish, Patricia K. Rivlin, Mark A. Hinton, Jordan K. Matelsky, Victoria A. Rose, Jorge L. Rivera Jr., Nicole E. Stock, Brock A. Wester, Erik C. Johnson, William R. Gray-Roncal",
+        "summary": "The promise of large-scale, high-resolution datasets from Electron Microscopy\n(EM) and X-ray Microtomography (XRM) lies in their ability to reveal neural\nstructures and synaptic connectivity, which is critical for understanding the\nbrain. Effectively managing these complex and rapidly increasing datasets will\nenable new scientific insights, facilitate querying, and support secondary use\nacross the neuroscience community. However, without effective neurodata\nstandards that permit use of these data across multiple systems and workflows,\nthese valuable and costly datasets risk being underutilized especially as they\nsurpass petascale levels. These standards will promote data sharing through\naccessible interfaces, allow researchers to build on each other's work, and\nguide the development of tools and capabilities that are interoperable. Herein\nwe outline a standards framework for creating and managing annotations\noriginating and derived from high-resolution volumetric imaging and connectomic\ndatasets, focusing on ensuring Findable, Accessible, Interoperable, and\nReusable (FAIR) practices. The goal is to enhance collaborative efforts, boost\nthe reliability of findings, and enable comparative analysis across growing\ndatasets of different species and modalities. We have formed a global working\ngroup with academic and industry partners in the high-resolution volumetric\ndata generation and analysis community, focused on identifying gaps in current\nEM and XRM data pipelines, and refining outlines and platforms for\nstandardizing EM and XRM methods. This focus considers existing and past\ncommunity approaches and includes examining neuronal entities, biological\ncomponents, and associated metadata, while emphasizing adaptability and\nfostering collaboration.",
+        "published": "2024-10-29",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.22320v2",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "A prescriptive theory for brain-like inference",
+        "authors": "Hadi Vafaii, Dekel Galor, Jacob L. Yates",
+        "summary": "The Evidence Lower Bound (ELBO) is a widely used objective for training deep\ngenerative models, such as Variational Autoencoders (VAEs). In the neuroscience\nliterature, an identical objective is known as the variational free energy,\nhinting at a potential unified framework for brain function and machine\nlearning. Despite its utility in interpreting generative models, including\ndiffusion models, ELBO maximization is often seen as too broad to offer\nprescriptive guidance for specific architectures in neuroscience or machine\nlearning. In this work, we show that maximizing ELBO under Poisson assumptions\nfor general sequence data leads to a spiking neural network that performs\nBayesian posterior inference through its membrane potential dynamics. The\nresulting model, the iterative Poisson VAE (iP-VAE), has a closer connection to\nbiological neurons than previous brain-inspired predictive coding models based\non Gaussian assumptions. Compared to amortized and iterative VAEs, iP-VAElearns\nsparser representations and exhibits superior generalization to\nout-of-distribution samples. These findings suggest that optimizing ELBO,\ncombined with Poisson assumptions, provides a solid foundation for developing\nprescriptive theories in NeuroAI.",
+        "published": "2024-10-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.19315v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Kuramoto Oscillators With Asymmetric Coupling",
+        "authors": "Leonard M. Sander",
+        "summary": "We study a system of coupled oscillators of the Sakaguchi-Kuramoto type with\ninteractions including a phase delay. We consider the case of a coupling matrix\nsuch that oscillators with large natural frequencies drive all slower ones but\nnot the reverse. This scheme is inspired by Hebbian learning in neuroscience.\nWe propose a simple model which is partly solvable analytically and shows many\nunusual features. For example, for the case of phase delay $\\pi/2$ (a symmetric\nphase response curve) with symmetric coupling there is no synchronous behavior.\nBut in the asymmetric coupling case, there are phase-locked states, i.e.,\nstates where many oscillators have the same frequency, but with substantial\nphase differences.",
+        "published": "2024-10-24",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.19156v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 75
+    },
+    {
+      "article": {
+        "title": "On the control of recurrent neural networks using constant inputs",
+        "authors": "Cyprien Tamekue, Ruiqi Chen, ShiNung Ching",
+        "summary": "This paper investigates the controllability properties of a general class of\nrecurrent neural networks that are widely used for hypothesis generation in\ntheoretical neuroscience, including the modeling of large-scale human brain\ndynamics. Our study focuses on the control synthesis of such networks using\nconstant and piecewise constant inputs, motivated by emerging applications in\nnon-invasive neurostimulation such as transcranial direct current stimulation\n(tDCS). The neural network model considered is a continuous Hopfield-type\nsystem with nonlinear activation functions and arbitrary input matrices\nrepresenting interactions among multiple brain regions. Our main contribution\nis the formulation and solution of a control synthesis problem for these\nnonlinear systems. We provide a proper generalization of the variation of the\nconstants formula that constitutes a novel representation of the system's state\ntrajectory. This representation admits a verifiable condition on the existence\nof the constant control input to solve a short-time two-point boundary value\nproblem in the state space. This formulation admits a synthesis for the input\nin question, which can be realized using modern algorithmic optimization tools.\nIn the case of linear activation functions, this analysis and synthesis reduces\nto the verification of algebraic conditions on the system matrices. Simulation\nresults are presented to illustrate the theoretical findings and demonstrate\nthe efficacy of the proposed control strategies. These results offer a novel\ncontrol synthesis for an important class of neural network models that may, in\nturn, enable the design of brain stimulation protocols to modulate whole-brain\nactivity in therapeutic and cognitive enhancement applications.",
+        "published": "2024-10-22",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.17199v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Modeling dynamic neural activity by combining naturalistic video stimuli\n  and stimulus-independent latent factors",
+        "authors": "Finn Schmidt, Suhas Shrinivasan, Polina Turishcheva, Fabian H. Sinz",
+        "summary": "Understanding how the brain processes dynamic natural stimuli remains a\nfundamental challenge in neuroscience. Current dynamic neural encoding models\neither take stimuli as input but ignore shared variability in neural responses,\nor they model this variability by deriving latent embeddings from neural\nresponses or behavior while ignoring the visual input. To address this gap, we\npropose a probabilistic model that incorporates video inputs along with\nstimulus-independent latent factors to capture variability in neuronal\nresponses, predicting a joint distribution for the entire population. After\ntraining and testing our model on mouse V1 neuronal responses, we found that it\noutperforms video-only models in terms of log-likelihood and achieves further\nimprovements when conditioned on responses from other neurons. Furthermore, we\nfind that the learned latent factors strongly correlate with mouse behavior,\nalthough the model was trained without behavior data.",
+        "published": "2024-10-21",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.16136v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Latency correction in sparse neuronal spike trains with overlapping\n  global events",
+        "authors": "Arturo Mariani, Federico Senocrate, Jason Mikiel-Hunter, David McAlpine, Barbara Beiderbeck, Michael Pecka, Kevin Lin, Thomas Kreuz",
+        "summary": "Background: In Kreuz et al., J Neurosci Methods 381, 109703 (2022) two\nmethods were proposed that perform latency correction, i.e., optimize the spike\ntime alignment of sparse neuronal spike trains with well defined global spiking\nevents. The first one based on direct shifts is fast but uses only partial\nlatency information, while the other one makes use of the full information but\nrelies on the computationally costly simulated annealing. Both methods reach\ntheir limits and can become unreliable when successive global events are not\nsufficiently separated or even overlap.\n  New Method: Here we propose an iterative scheme that combines the advantages\nof the two original methods by using in each step as much of the latency\ninformation as possible and by employing a very fast extrapolation direct shift\nmethod instead of the much slower simulated annealing.\n  Results: We illustrate the effectiveness and the improved performance,\nmeasured in terms of the relative shift error, of the new iterative scheme not\nonly on simulated data with known ground truths but also on single-unit\nrecordings from two medial superior olive neurons of a gerbil.\n  Comparison with Existing Method(s): The iterative scheme outperforms the\nexisting approaches on both the simulated and the experimental data. Due to its\nlow computational demands, and in contrast to simulated annealing, it can also\nbe applied to very large datasets.\n  Conclusions: The new method generalizes and improves on the original method\nboth in terms of accuracy and speed. Importantly, it is the only method that\nallows to disentangle global events with overlap.",
+        "published": "2024-10-19",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.15018v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Probabilistic Principles for Biophysics and Neuroscience: Entropy\n  Production, Bayesian Mechanics & the Free-Energy Principle",
+        "authors": "Lancelot Da Costa",
+        "summary": "This thesis focuses on three fundamental aspects of biological systems;\nnamely, entropy production, Bayesian mechanics, and the free-energy principle.\nThe contributions are threefold: 1) We compute the entropy production for a\ngreater class of systems than before, including almost any stationary diffusion\nprocess, such as degenerate diffusions where the driving noise does not act on\nall coordinates of the system. Importantly, this class of systems encompasses\nMarkovian approximations of stochastic differential equations driven by colored\nnoise, which is significant since biological systems at the macro- and\nmeso-scale are generally subject to colored fluctuations. 2) We develop a\nBayesian mechanics for biological and physical entities that interact with\ntheir environment in which we give sufficient and necessary conditions for the\ninternal states of something to infer its external states, consistently with\nvariational Bayesian inference in statistics and theoretical neuroscience. 3)\nWe refine the constraints on Bayesian mechanics to obtain a description that is\nmore specific to biological systems, called the free-energy principle. This\nsays that active and internal states of biological systems unfold as minimising\na quantity known as free energy. The mathematical foundation to the free-energy\nprinciple, presented here, unlocks a first principles approach to modeling and\nsimulating behavior in neurobiology and artificial intelligence, by minimising\nfree energy given a generative model of external and sensory states.",
+        "published": "2024-10-15",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.11735v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Intramuscular High-Density Micro-Electrode Arrays Enable High-Precision\n  Decoding and Mapping of Spinal Motor Neurons to Reveal Hand Control",
+        "authors": "Agnese Grison, Jaime Ibanez Pereda, Silvia Muceli, Aritra Kundu, Farah Baracat, Giacomo Indiveri, Elisa Donati, Dario Farina",
+        "summary": "Decoding nervous system activity is a key challenge in neuroscience and\nneural interfacing. In this study, we propose a novel neural decoding system\nthat enables unprecedented large-scale sampling of muscle activity. Using\nmicro-electrode arrays with more than 100 channels embedded within the forearm\nmuscles, we recorded high-density signals that captured multi-unit motor neuron\nactivity. This extensive sampling was complemented by advanced methods for\nneural decomposition, analysis, and classification, allowing us to accurately\ndetect and interpret the spiking activity of spinal motor neurons that\ninnervate hand muscles. We evaluated this system in two healthy participants,\neach implanted with three electromyogram (EMG) micro-electrode arrays\n(comprising 40 electrodes each) in the forearm. These arrays recorded muscle\nactivity during both single- and multi-digit isometric contractions. For the\nfirst time under controlled conditions, we demonstrate that multi-digit tasks\nelicit unique patterns of motor neuron recruitment specific to each task,\nrather than employing combinations of recruitment patterns from single-digit\ntasks. This observation led us to hypothesize that hand tasks could be\nclassified with high precision based on the decoded neural activity. We\nachieved perfect classification accuracy (100%) across 12 distinct single- and\nmulti-digit tasks, and consistently high accuracy (>96\\%) across all conditions\nand subjects, for up to 16 task classes. These results significantly\noutperformed conventional EMG classification methods. The exceptional\nperformance of this system paves the way for developing advanced neural\ninterfaces based on invasive high-density EMG technology. This innovation could\ngreatly enhance human-computer interaction and lead to substantial improvements\nin assistive technologies, offering new possibilities for restoring motor\nfunction in clinical applications.",
+        "published": "2024-10-14",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.11016v1",
+        "category": "q-bio.NC",
+        "topic": "Neuroscience and Neural Computing"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "ARQ: A Mixed-Precision Quantization Framework for Accurate and\n  Certifiably Robust DNNs",
+        "authors": "Yuchen Yang, Shubham Ugare, Yifan Zhao, Gagandeep Singh, Sasa Misailovic",
+        "summary": "Mixed precision quantization has become an important technique for enabling\nthe execution of deep neural networks (DNNs) on limited resource computing\nplatforms. Traditional quantization methods have primarily concentrated on\nmaintaining neural network accuracy, either ignoring the impact of quantization\non the robustness of the network, or using only empirical techniques for\nimproving robustness. In contrast, techniques for robustness certification,\nwhich can provide strong guarantees about the robustness of DNNs have not been\nused during quantization due to their high computation cost.\n  This paper introduces ARQ, an innovative mixed-precision quantization method\nthat not only preserves the clean accuracy of the smoothed classifiers but also\nmaintains their certified robustness. ARQ uses reinforcement learning to find\naccurate and robust DNN quantization, while efficiently leveraging randomized\nsmoothing, a popular class of statistical DNN verification algorithms, to guide\nthe search process.\n  We compare ARQ with multiple state-of-the-art quantization techniques on\nseveral DNN architectures commonly used in quantization studies: ResNet-20 on\nCIFAR-10, ResNet-50 on ImageNet, and MobileNetV2 on ImageNet. We demonstrate\nthat ARQ consistently performs better than these baselines across all the\nbenchmarks and the input perturbation levels. In many cases, the performance of\nARQ quantized networks can reach that of the original DNN with floating-point\nweights, but with only 1.5% instructions.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24214v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Untelegraphable Encryption and its Applications",
+        "authors": "Jeffrey Champion, Fuyuki Kitagawa, Ryo Nishimaki, Takashi Yamakawa",
+        "summary": "We initiate the study of untelegraphable encryption (UTE), founded on the\nno-telegraphing principle, which allows an encryptor to encrypt a message such\nthat a binary string representation of the ciphertext cannot be decrypted by a\nuser with the secret key, a task that is classically impossible. This is a\nnatural relaxation of unclonable encryption, inspired by the recent work of\nNehoran and Zhandry (ITCS 2024), who showed a computational separation between\nthe no-cloning and no-telegraphing principles. In this work, we define and\nconstruct UTE information-theoretically in the plain model. Building off this,\nwe give several applications of UTE and study the interplay of UTE with UE and\nwell-studied tasks in quantum state learning, yielding the following\ncontributions:\n  - A construction of collusion-resistant UTE from standard secret-key\nencryption. We additionally show that hyper-efficient shadow tomography (HEST)\nis impossible assuming collusion-resistant UTE exists. By considering a\nrelaxation of collusion-resistant UTE, we are able to show the impossibility of\nHEST assuming only pseudorandom state generators (which may not imply one-way\nfunctions). This almost completely answers an open inquiry of Aaronson (STOC\n2019).\n  - A construction of UTE from a one-shot message authentication code in the\nclassical oracle model, such that there is an explicit attack that breaks UE\nsecurity for an unbounded polynomial number of decryptors.\n  - A construction of everlasting secure collusion-resistant UTE, where the\ndecryptor adversary can run in unbounded time, in the quantum random oracle\nmodel (QROM), and formal evidence that a construction in the plain model is a\nchallenging task. We additionally show that HEST with unbounded post-processing\ntime is impossible in the QROM.\n  - Constructions (and definitions) of untelegraphable secret sharing and\nuntelegraphable functional encryption.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24189v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Assessing the Impact of Packing on Machine Learning-Based Malware\n  Detection and Classification Systems",
+        "authors": "Daniel Gibert, Nikolaos Totosis, Constantinos Patsakis, Giulio Zizzo, Quan Le",
+        "summary": "The proliferation of malware, particularly through the use of packing,\npresents a significant challenge to static analysis and signature-based malware\ndetection techniques. The application of packing to the original executable\ncode renders extracting meaningful features and signatures challenging. To deal\nwith the increasing amount of malware in the wild, researchers and anti-malware\ncompanies started harnessing machine learning capabilities with very promising\nresults. However, little is known about the effects of packing on static\nmachine learning-based malware detection and classification systems. This work\naddresses this gap by investigating the impact of packing on the performance of\nstatic machine learning-based models used for malware detection and\nclassification, with a particular focus on those using visualisation\ntechniques. To this end, we present a comprehensive analysis of various packing\ntechniques and their effects on the performance of machine learning-based\ndetectors and classifiers. Our findings highlight the limitations of current\nstatic detection and classification systems and underscore the need to be\nproactive to effectively counteract the evolving tactics of malware authors.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24017v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Distributing Intelligence in 6G Programmable Data Planes for Effective\n  In-Network Deployment of an Active Intrusion Detection System",
+        "authors": "Mattia G. Spina, Floriano De Rango, Edoardo Scalzo, Francesca Guerriero, Antonio Iera",
+        "summary": "The problem of attacks on new generation network infrastructures is becoming\nincreasingly relevant, given the widening of the attack surface of these\nnetworks resulting from the greater number of devices that will access them in\nthe future (sensors, actuators, vehicles, household appliances, etc.).\nApproaches to the design of intrusion detection systems must evolve and go\nbeyond the traditional concept of perimeter control to build on new paradigms\nthat exploit the typical characteristics of future 5G and 6G networks, such as\nin-network computing and intelligent programmable data planes. The aim of this\nresearch is to propose a disruptive paradigm in which devices in a typical data\nplane of a future programmable network have %classification and anomaly\ndetection capabilities and cooperate in a fully distributed fashion to act as\nan ML-enabled Active Intrusion Detection System \"embedded\" into the network.\nThe reported proof-of-concept experiments demonstrate that the proposed\nparadigm allows working effectively and with a good level of precision while\noccupying overall less CPU and RAM resources of the devices involved.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24013v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Metamorphic Malware Evolution: The Potential and Peril of Large Language\n  Models",
+        "authors": "Pooria Madani",
+        "summary": "Code metamorphism refers to a computer programming exercise wherein the\nprogram modifies its own code (partial or entire) consistently and\nautomatically while retaining its core functionality. This technique is often\nused for online performance optimization and automated crash recovery in\ncertain mission-critical applications. However, the technique has been\nmisappropriated by malware creators to bypass signature-based detection\nmeasures instituted by anti-malware engines. However, current code mutation\nengines used by threat actors offer only a limited degree of mutation, which is\nfrequently detectable via static code analysis. The advent of large language\nmodels (LLMs), such as ChatGPT 4.0 and Google Bard may lead to a significant\nevolution in this landscape. These models have demonstrated a level of\nalgorithm comprehension and code synthesis capability that closely resembles\nhuman abilities. This advancement has sparked concerns among experts that such\nmodels could be exploited by threat actors to generate sophisticated\nmetamorphic malware. This paper explores the potential of several prominent\nLLMs for software code mutation that may be used to reconstruct (with mutation)\nexisting malware code bases or create new forms of embedded mutation engines\nfor next-gen metamorphic malwares. In this work, we introduce a framework for\ncreating self-testing program mutation engines based on LLM/Transformer-based\nmodels. The proposed framework serves as an essential tool in testing next-gen\nmetamorphic malware detection engines.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23894v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Noise as a Double-Edged Sword: Reinforcement Learning Exploits\n  Randomized Defenses in Neural Networks",
+        "authors": "Steve Bakos, Pooria Madani, Heidar Davoudi",
+        "summary": "This study investigates a counterintuitive phenomenon in adversarial machine\nlearning: the potential for noise-based defenses to inadvertently aid evasion\nattacks in certain scenarios. While randomness is often employed as a defensive\nstrategy against adversarial examples, our research reveals that this approach\ncan sometimes backfire, particularly when facing adaptive attackers using\nreinforcement learning (RL). Our findings show that in specific cases,\nespecially with visually noisy classes, the introduction of noise in the\nclassifier's confidence values can be exploited by the RL attacker, leading to\na significant increase in evasion success rates. In some instances, the\nnoise-based defense scenario outperformed other strategies by up to 20\\% on a\nsubset of classes. However, this effect was not consistent across all\nclassifiers tested, highlighting the complexity of the interaction between\nnoise-based defenses and different models. These results suggest that in some\ncases, noise-based defenses can inadvertently create an adversarial training\nloop beneficial to the RL attacker. Our study emphasizes the need for a more\nnuanced approach to defensive strategies in adversarial machine learning,\nparticularly in safety-critical applications. It challenges the assumption that\nrandomness universally enhances defense against evasion attacks and highlights\nthe importance of considering adaptive, RL-based attackers when designing\nrobust defense mechanisms.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23870v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Zero-shot Class Unlearning via Layer-wise Relevance Analysis and\n  Neuronal Path Perturbation",
+        "authors": "Wenhan Chang, Tianqing Zhu, Yufeng Wu, Wanlei Zhou",
+        "summary": "In the rapid advancement of artificial intelligence, privacy protection has\nbecome crucial, giving rise to machine unlearning. Machine unlearning is a\ntechnique that removes specific data influences from trained models without the\nneed for extensive retraining. However, it faces several key challenges,\nincluding accurately implementing unlearning, ensuring privacy protection\nduring the unlearning process, and achieving effective unlearning without\nsignificantly compromising model performance. This paper presents a novel\napproach to machine unlearning by employing Layer-wise Relevance Analysis and\nNeuronal Path Perturbation. We address three primary challenges: the lack of\ndetailed unlearning principles, privacy guarantees in zero-shot unlearning\nscenario, and the balance between unlearning effectiveness and model utility.\nOur method balances machine unlearning performance and model utility by\nidentifying and perturbing highly relevant neurons, thereby achieving effective\nunlearning. By using data not present in the original training set during the\nunlearning process, we satisfy the zero-shot unlearning scenario and ensure\nrobust privacy protection. Experimental results demonstrate that our approach\neffectively removes targeted data from the target unlearning model while\nmaintaining the model's utility, offering a practical solution for\nprivacy-preserving machine learning.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23693v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Adversarial Attacks of Vision Tasks in the Past 10 Years: A Survey",
+        "authors": "Chiyu Zhang, Xiaogang Xu, Jiafei Wu, Zhe Liu, Lu Zhou",
+        "summary": "Adversarial attacks, which manipulate input data to undermine model\navailability and integrity, pose significant security threats during machine\nlearning inference. With the advent of Large Vision-Language Models (LVLMs),\nnew attack vectors, such as cognitive bias, prompt injection, and jailbreak\ntechniques, have emerged. Understanding these attacks is crucial for developing\nmore robust systems and demystifying the inner workings of neural networks.\nHowever, existing reviews often focus on attack classifications and lack\ncomprehensive, in-depth analysis. The research community currently needs: 1)\nunified insights into adversariality, transferability, and generalization; 2)\ndetailed evaluations of existing methods; 3) motivation-driven attack\ncategorizations; and 4) an integrated perspective on both traditional and LVLM\nattacks. This article addresses these gaps by offering a thorough summary of\ntraditional and LVLM adversarial attacks, emphasizing their connections and\ndistinctions, and providing actionable insights for future research.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23687v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Across-Platform Detection of Malicious Cryptocurrency Transactions via\n  Account Interaction Learning",
+        "authors": "Zheng Che, Meng Shen, Zhehui Tan, Hanbiao Du, Liehuang Zhu, Wei Wang, Ting Chen, Qinglin Zhao, Yong Xie",
+        "summary": "With the rapid evolution of Web3.0, cryptocurrency has become a cornerstone\nof decentralized finance. While these digital assets enable efficient and\nborderless financial transactions, their pseudonymous nature has also attracted\nmalicious activities such as money laundering, fraud, and other financial\ncrimes. Effective detection of malicious transactions is crucial to maintaining\nthe security and integrity of the Web 3.0 ecosystem. Existing malicious\ntransaction detection methods rely on large amounts of labeled data and suffer\nfrom low generalization. Label-efficient and generalizable malicious\ntransaction detection remains a challenging task. In this paper, we propose\nShadowEyes, a novel malicious transaction detection method. Specifically, we\nfirst propose a generalized graph structure named TxGraph as a representation\nof malicious transaction, which captures the interaction features of each\nmalicious account and its neighbors. Then we carefully design a data\naugmentation method tailored to simulate the evolution of malicious\ntransactions to generate positive pairs. To alleviate account label scarcity,\nwe further design a graph contrastive mechanism, which enables ShadowEyes to\nlearn discriminative features effectively from unlabeled data, thereby\nenhancing its detection capabilities in real-world scenarios. We conduct\nextensive experiments using public datasets to evaluate the performance of\nShadowEyes. The results demonstrate that it outperforms state-of-the-art (SOTA)\nmethods in four typical scenarios. Specifically, in the zero-shot learning\nscenario, it can achieve an F1 score of 76.98% for identifying gambling\ntransactions, surpassing the SOTA method by12.05%. In the scenario of\nacross-platform malicious transaction detection, ShadowEyes maintains an F1\nscore of around 90%, which is 10% higher than the SOTA method.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23563v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Transferable Ensemble Black-box Jailbreak Attacks on Large Language\n  Models",
+        "authors": "Yiqi Yang, Hongye Fu",
+        "summary": "In this report, we propose a novel black-box jailbreak attacking framework\nthat incorporates various LLM-as-Attacker methods to deliver transferable and\npowerful jailbreak attacks. Our method is designed based on three key\nobservations from existing jailbreaking studies and practices. First, we\nconsider an ensemble approach should be more effective in exposing the\nvulnerabilities of an aligned LLM compared to individual attacks. Second,\ndifferent malicious instructions inherently vary in their jailbreaking\ndifficulty, necessitating differentiated treatment to ensure more efficient\nattacks. Finally, the semantic coherence of a malicious instruction is crucial\nfor triggering the defenses of an aligned LLM; therefore, it must be carefully\ndisrupted to manipulate its embedding representation, thereby increasing the\njailbreak success rate. We validated our approach by participating in the\nCompetition for LLM and Agent Safety 2024, where our team achieved top\nperformance in the Jailbreaking Attack Track.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23558v1",
+        "category": "cs.CR",
+        "topic": "Cryptography and Security"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Disentangling Interpretable Factors with Supervised Independent Subspace\n  Principal Component Analysis",
+        "authors": "Jiayu Su, David A. Knowles, Raul Rabadan",
+        "summary": "The success of machine learning models relies heavily on effectively\nrepresenting high-dimensional data. However, ensuring data representations\ncapture human-understandable concepts remains difficult, often requiring the\nincorporation of prior knowledge and decomposition of data into multiple\nsubspaces. Traditional linear methods fall short in modeling more than one\nspace, while more expressive deep learning approaches lack interpretability.\nHere, we introduce Supervised Independent Subspace Principal Component Analysis\n($\\texttt{sisPCA}$), a PCA extension designed for multi-subspace learning.\nLeveraging the Hilbert-Schmidt Independence Criterion (HSIC), $\\texttt{sisPCA}$\nincorporates supervision and simultaneously ensures subspace disentanglement.\nWe demonstrate $\\texttt{sisPCA}$'s connections with autoencoders and\nregularized linear regression and showcase its ability to identify and separate\nhidden data structures through extensive applications, including breast cancer\ndiagnosis from image features, learning aging-associated DNA methylation\nchanges, and single-cell analysis of malaria infection. Our results reveal\ndistinct functional pathways associated with malaria colonization, underscoring\nthe essentiality of explainable representation in high-dimensional data\nanalysis.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23595v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Assessing Concordance between RNA-Seq and NanoString Technologies in\n  Ebola-Infected Nonhuman Primates Using Machine Learning",
+        "authors": "Mostafa Rezapour, Aarthi Narayanan, Wyatt H. Mowery, Metin Nafi Gurcan",
+        "summary": "This study evaluates the concordance between RNA sequencing (RNA-Seq) and\nNanoString technologies for gene expression analysis in non-human primates\n(NHPs) infected with Ebola virus (EBOV). We performed a detailed comparison of\nboth platforms, demonstrating a strong correlation between them, with Spearman\ncoefficients for 56 out of 62 samples ranging from 0.78 to 0.88, with a mean of\n0.83 and a median of 0.85. Bland-Altman analysis further confirmed high\nconsistency, with most measurements falling within 95% confidence limits. A\nmachine learning approach, using the Supervised Magnitude-Altitude Scoring\n(SMAS) method trained on NanoString data, identified OAS1 as a key marker for\ndistinguishing RT-qPCR positive from negative samples. Remarkably, when applied\nto RNA-Seq data, OAS1 also achieved 100% accuracy in differentiating infected\nfrom uninfected samples using logistic regression, demonstrating its robustness\nacross platforms. Further differential expression analysis identified 12 common\ngenes including ISG15, OAS1, IFI44, IFI27, IFIT2, IFIT3, IFI44L, MX1, MX2,\nOAS2, RSAD2, and OASL which demonstrated the highest levels of statistical\nsignificance and biological relevance across both platforms. Gene Ontology (GO)\nanalysis confirmed that these genes are directly involved in key immune and\nviral infection pathways, reinforcing their importance in EBOV infection. In\naddition, RNA-Seq uniquely identified genes such as CASP5, USP18, and DDX60,\nwhich play key roles in immune regulation and antiviral defense. This finding\nhighlights the broader detection capabilities of RNA-Seq and underscores the\ncomplementary strengths of both platforms in providing a comprehensive and\naccurate assessment of gene expression changes during Ebola virus infection.",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23433v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Explainable convolutional neural network model provides an alternative\n  genome-wide association perspective on mutations in SARS-CoV-2",
+        "authors": "Parisa Hatami, Richard Annan, Luis Urias Miranda, Jane Gorman, Mengjun Xie, Letu Qingge, Hong Qin",
+        "summary": "Identifying mutations of SARS-CoV-2 strains associated with their phenotypic\nchanges is critical for pandemic prediction and prevention. We compared an\nexplainable convolutional neural network (CNN) and the traditional genome-wide\nassociation study (GWAS) on the mutations associated with WHO labels of\nSARS-CoV-2, a proxy for virulence phenotypes. We trained a CNN classification\nmodel that can predict genomic sequences into Variants of Concern (VOCs), and\nthen applied Shapley Additive explanations (SHAP) model to identify mutations\nthat are important for the correct predictions. For comparison, we performed\ntraditional GWAS to identify mutations associated with VOCs. Comparison of the\ntwo approaches shows that the explainable neural network approach can more\neffectively reveal known nucleotide substitutions associated with VOCs, such as\nthose in the spike gene regions. Our results suggest that explainable neural\nnetworks for genomic sequences offer a promising alternative to the traditional\ngenome wide analysis approaches.",
+        "published": "2024-10-29",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.22452v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Can Large Language Models Replace Data Scientists in Clinical Research?",
+        "authors": "Zifeng Wang, Benjamin Danek, Ziwei Yang, Zheng Chen, Jimeng Sun",
+        "summary": "Data science plays a critical role in clinical research, but it requires\nprofessionals with expertise in coding and medical data analysis. Large\nlanguage models (LLMs) have shown great potential in supporting medical tasks\nand performing well in general coding tests. However, these tests do not assess\nLLMs' ability to handle data science tasks in medicine, nor do they explore\ntheir practical utility in clinical research. To address this, we developed a\ndataset consisting of 293 real-world data science coding tasks, based on 39\npublished clinical studies, covering 128 tasks in Python and 165 tasks in R.\nThis dataset simulates realistic clinical research scenarios using patient\ndata. Our findings reveal that cutting-edge LLMs struggle to generate perfect\nsolutions, frequently failing to follow input instructions, understand target\ndata, and adhere to standard analysis practices. Consequently, LLMs are not yet\nready to fully automate data science tasks. We benchmarked advanced adaptation\nmethods and found two to be particularly effective: chain-of-thought prompting,\nwhich provides a step-by-step plan for data analysis, which led to a 60%\nimprovement in code accuracy; and self-reflection, enabling LLMs to iteratively\nrefine their code, yielding a 38% accuracy improvement. Building on these\ninsights, we developed a platform that integrates LLMs into the data science\nworkflow for medical professionals. In a user study with five medical doctors,\nwe found that while LLMs cannot fully automate coding tasks, they significantly\nstreamline the programming process. We found that 80% of their submitted code\nsolutions were incorporated from LLM-generated code, with up to 96% reuse in\nsome cases. Our analysis highlights the potential of LLMs, when integrated into\nexpert workflows, to enhance data science efficiency in clinical research.",
+        "published": "2024-10-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.21591v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Popping Bubbles in Pangenome Graphs",
+        "authors": "Njagi Mwaniki, Erik Garrison, Nadia Pisanti",
+        "summary": "In this paper, we introduce flubbles, a new definition of \"bubbles\"\ncorresponding to variants in a (pan)genome graph $G$. We then show a\ncharacterization for flubbles in terms of equivalence classes regarding cycles\nin an intermediate data structure we built from the spanning tree of the $G$,\nwhich leads us to a linear time and space solution for finding all flubbles.\nFurthermore, we show how a related characterization also allows us to\nefficiently detect what we define as hairpin inversions: a cycle preceded and\nfollowed by the same path in the graph; being the latter necessarily traversed\nboth ways, this structure corresponds to inversions. Finally, Inspired by the\nconcept of Program Structure Tree introduced fifty years ago to represent the\nhierarchy of the control structure of a program, we define a tree representing\nthe structure of G in terms of flubbles, the flubble tree, which we also find\nin linear time. The hierarchy of variants introduced by the flubble tree paves\nthe way for new investigations of (pan)genomic structures and their\ndecomposition for practical analyses. We have implemented our methods into a\nprototype tool named povu which we tested on human and yeast data. We show that\npovu can find flubbles and also output the flubble tree while being as fast (or\nfaster than) well established tools that find bubbles, such as vg and\nBubbleGun. Moreover, we show how, within the same time, povu can find hairpin\ninversions that, to the best of our knowledge, no other tool is able to find.\nOur tool is freely available at https://github.com/urbanslug/povu/ under the\nMIT License.",
+        "published": "2024-10-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20932v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Absorb & Escape: Overcoming Single Model Limitations in Generating\n  Genomic Sequences",
+        "authors": "Zehui Li, Yuhao Ni, Guoxuan Xia, William Beardall, Akashaditya Das, Guy-Bart Stan, Yiren Zhao",
+        "summary": "Abstract Recent advances in immunology and synthetic biology have accelerated\nthe development of deep generative methods for DNA sequence design. Two\ndominant approaches in this field are AutoRegressive (AR) models and Diffusion\nModels (DMs). However, genomic sequences are functionally heterogeneous,\nconsisting of multiple connected regions (e.g., Promoter Regions, Exons, and\nIntrons) where elements within each region come from the same probability\ndistribution, but the overall sequence is non-homogeneous. This heterogeneous\nnature presents challenges for a single model to accurately generate genomic\nsequences. In this paper, we analyze the properties of AR models and DMs in\nheterogeneous genomic sequence generation, pointing out crucial limitations in\nboth methods: (i) AR models capture the underlying distribution of data by\nfactorizing and learning the transition probability but fail to capture the\nglobal property of DNA sequences. (ii) DMs learn to recover the global\ndistribution but tend to produce errors at the base pair level. To overcome the\nlimitations of both approaches, we propose a post-training sampling method,\ntermed Absorb & Escape (A&E) to perform compositional generation from AR models\nand DMs. This approach starts with samples generated by DMs and refines the\nsample quality using an AR model through the alternation of the Absorb and\nEscape steps. To assess the quality of generated sequences, we conduct\nextensive experiments on 15 species for conditional and unconditional DNA\ngeneration. The experiment results from motif distribution, diversity checks,\nand genome integration tests unequivocally show that A&E outperforms\nstate-of-the-art AR models and DMs in genomic sequence generation.",
+        "published": "2024-10-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.21345v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Nanopore DNA Sequencing Technology: A Sociological Perspective",
+        "authors": "Suadath V, Muhammad Sajeer P",
+        "summary": "Nanopore sequencing, a next-generation sequencing technology, holds the\npotential to revolutionize multiple facets of life sciences, forensics, and\nhealthcare. While previous research has focused on its technical intricacies\nand biomedical applications, this paper offers a unique perspective by\nscrutinizing the societal dimensions (ethical, legal, and social implications)\nof nanopore sequencing. Employing the lenses of Diffusion and Action Network\nTheory, we examine the dissemination of nanopore sequencing in society as a\npotential consumer product, contributing to the field of the sociology of\ntechnology. We investigate the possibility of interactions between human and\nnonhuman actors in developing nanopore technology to analyse how various\nstakeholders, such as companies, regulators, and researchers, shape the\ntrajectory of the growth of nanopore sequencing. This work offers insights into\nthe social construction of nanopore sequencing, shedding light on the actors,\npower dynamics, and socio-technical networks that shape its adoption and\nsocietal impact. Understanding the sociological dimensions of this\ntransformative technology is vital for responsible development, equitable\ndistribution, and inclusive integration into diverse societal contexts.",
+        "published": "2024-10-27",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20491v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 65
+    },
+    {
+      "article": {
+        "title": "GATES: Graph Attention Network with Global Expression Fusion for\n  Deciphering Spatial Transcriptome Architectures",
+        "authors": "Xiongtao Xiao, Xiaofeng Chen, Feiyan Jiang, Songming Zhang, Wenming Cao, Cheng Tan, Zhangyang Gao, Zhongshan Li",
+        "summary": "Single-cell spatial transcriptomics (ST) offers a unique approach to\nmeasuring gene expression profiles and spatial cell locations simultaneously.\nHowever, most existing ST methods assume that cells in closer spatial proximity\nexhibit more similar gene expression patterns. Such assumption typically\nresults in graph structures that prioritize local spatial information while\noverlooking global patterns, limiting the ability to fully capture the broader\nstructural features of biological tissues. To overcome this limitation, we\npropose GATES (Graph Attention neTwork with global Expression fuSion), a novel\nmodel designed to capture structural details in spatial transcriptomics data.\nGATES first constructs an expression graph that integrates local and global\ninformation by leveraging both spatial proximity and gene expression\nsimilarity. The model then employs an autoencoder with adaptive attention to\nassign proper weights for neighboring nodes, enhancing its capability of\nfeature extraction. By fusing features of both the spatial and expression\ngraphs, GATES effectively balances spatial context with gene expression data.\nExperimental results across multiple datasets demonstrate that GATES\nsignificantly outperforms existing methods in identifying spatial domains,\nhighlighting its potential for analyzing complex biological tissues. Our code\ncan be accessed on GitHub at https://github.com/xiaoxiongtao/GATES.",
+        "published": "2024-10-26",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20159v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Disentangling Genotype and Environment Specific Latent Features for\n  Improved Trait Prediction using a Compositional Autoencoder",
+        "authors": "Anirudha Powadi, Talukder Zaki Jubery, Michael C. Tross, James C. Schnable, Baskar Ganapathysubramanian",
+        "summary": "This study introduces a compositional autoencoder (CAE) framework designed to\ndisentangle the complex interplay between genotypic and environmental factors\nin high-dimensional phenotype data to improve trait prediction in plant\nbreeding and genetics programs. Traditional predictive methods, which use\ncompact representations of high-dimensional data through handcrafted features\nor latent features like PCA or more recently autoencoders, do not separate\ngenotype-specific and environment-specific factors. We hypothesize that\ndisentangling these features into genotype-specific and environment-specific\ncomponents can enhance predictive models. To test this, we developed a\ncompositional autoencoder (CAE) that decomposes high-dimensional data into\ndistinct genotype-specific and environment-specific latent features.\n  Our CAE framework employs a hierarchical architecture within an autoencoder\nto effectively separate these entangled latent features. Applied to a maize\ndiversity panel dataset, the CAE demonstrates superior modeling of\nenvironmental influences and 5-10 times improved predictive performance for key\ntraits like Days to Pollen and Yield, compared to the traditional methods,\nincluding standard autoencoders, PCA with regression, and Partial Least Squares\nRegression (PLSR). By disentangling latent features, the CAE provides powerful\ntool for precision breeding and genetic research. This work significantly\nenhances trait prediction models, advancing agricultural and biological\nsciences.",
+        "published": "2024-10-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.19922v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Hypothalamic expression analysis of m6A RNA methylation associated genes\n  suggests a potential role of epitransciptomics in sexual maturation of\n  Atlantic salmon",
+        "authors": "Ehsan Pashay Ahi, Morgane Frapin, Mikaela Hukkanen, Craig R. Primmer",
+        "summary": "Better understanding the molecular processes contributing to variation in\nmaturation timing is important for Atlantic salmon aquaculture, as early\nmaturation causes considerable financial losses. The m6A RNA methylation is a\nconserved and dynamically reversible mechanism controlling gene expression in a\nmyriad of biological processes. The role of m6A methylation in sexual\nmaturation, however, has remained largely unexplored and has never been studied\nin Atlantic salmon. While the maturation process is known to be affected by\nmany genetic and environmental factors, the molecular mechanisms causing\nvariation in the timing of maturation are still poorly understood. Hence,\ninvestigation of whether a widespread mechanism like m6A methylation could be\ninvolved in controlling of the maturation timing is warranted. In salmon, two\ngenes, also associated with age at maturity in humans, vgll3 and six6, have\nbeen shown to play an important role in maturation timing. In this study, we\ninvestigated the expression of 16 genes involved in the regulation of m6A RNA\nmethylation in the hypothalamus of Atlantic salmon with different homozygous\ncombinations of late and early alleles for vgll3 and six6 genes. We found\ndifferential expression of ythdf2.2, an m6A reader promoting mRNA degradation,\nwith higher expression in six6*LL compared to other genotypes as well as in\nimmature compared to mature males. In addition, we found that the expression\nlevels of genes coding for an eraser, alkbh5, and for a reader, ythdf1, were\nhigher in the hypothalamus of females than in males across all the different\ngenotypes studied. However the total m6A levels between the whole hypothalamus\nof males and females were similar. Our results indicate a potential role of the\nm6A methylation process in sexual maturation of salmon, and provide the first\nevidence for such regulatory mechanism in the hypothalamus of any vertebrate",
+        "published": "2024-10-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.19508v1",
+        "category": "q-bio.GN",
+        "topic": "Genomics and Bioinformatics"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "Tensegrity Robot Proprioceptive State Estimation with Geometric\n  Constraints",
+        "authors": "Wenzhe Tong, Tzu-Yuan Lin, Jonathan Mi, Yicheng Jiang, Maani Ghaffari, Xiaonan Huang",
+        "summary": "Tensegrity robots, characterized by a synergistic assembly of rigid rods and\nelastic cables, form robust structures that are resistant to impacts. However,\nthis design introduces complexities in kinematics and dynamics, complicating\ncontrol and state estimation. This work presents a novel proprioceptive state\nestimator for tensegrity robots. The estimator initially uses the geometric\nconstraints of 3-bar prism tensegrity structures, combined with IMU and motor\nencoder measurements, to reconstruct the robot's shape and orientation. It then\nemploys a contact-aided invariant extended Kalman filter with forward\nkinematics to estimate the global position and orientation of the tensegrity\nrobot. The state estimator's accuracy is assessed against ground truth data in\nboth simulated environments and real-world tensegrity robot applications. It\nachieves an average drift percentage of 4.2%, comparable to the state\nestimation performance of traditional rigid robots. This state estimator\nadvances the state of the art in tensegrity robot state estimation and has the\npotential to run in real-time using onboard sensors, paving the way for full\nautonomy of tensegrity robots in unstructured environments.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24226v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "EgoMimic: Scaling Imitation Learning via Egocentric Video",
+        "authors": "Simar Kareer, Dhruv Patel, Ryan Punamiya, Pranay Mathur, Shuo Cheng, Chen Wang, Judy Hoffman, Danfei Xu",
+        "summary": "The scale and diversity of demonstration data required for imitation learning\nis a significant challenge. We present EgoMimic, a full-stack framework which\nscales manipulation via human embodiment data, specifically egocentric human\nvideos paired with 3D hand tracking. EgoMimic achieves this through: (1) a\nsystem to capture human embodiment data using the ergonomic Project Aria\nglasses, (2) a low-cost bimanual manipulator that minimizes the kinematic gap\nto human data, (3) cross-domain data alignment techniques, and (4) an imitation\nlearning architecture that co-trains on human and robot data. Compared to prior\nworks that only extract high-level intent from human videos, our approach\ntreats human and robot data equally as embodied demonstration data and learns a\nunified policy from both data sources. EgoMimic achieves significant\nimprovement on a diverse set of long-horizon, single-arm and bimanual\nmanipulation tasks over state-of-the-art imitation learning methods and enables\ngeneralization to entirely new scenes. Finally, we show a favorable scaling\ntrend for EgoMimic, where adding 1 hour of additional hand data is\nsignificantly more valuable than 1 hour of additional robot data. Videos and\nadditional information can be found at https://egomimic.github.io/",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24221v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Teaching Embodied Reinforcement Learning Agents: Informativeness and\n  Diversity of Language Use",
+        "authors": "Jiajun Xi, Yinong He, Jianing Yang, Yinpei Dai, Joyce Chai",
+        "summary": "In real-world scenarios, it is desirable for embodied agents to have the\nability to leverage human language to gain explicit or implicit knowledge for\nlearning tasks. Despite recent progress, most previous approaches adopt simple\nlow-level instructions as language inputs, which may not reflect natural human\ncommunication. It's not clear how to incorporate rich language use to\nfacilitate task learning. To address this question, this paper studies\ndifferent types of language inputs in facilitating reinforcement learning (RL)\nembodied agents. More specifically, we examine how different levels of language\ninformativeness (i.e., feedback on past behaviors and future guidance) and\ndiversity (i.e., variation of language expressions) impact agent learning and\ninference. Our empirical results based on four RL benchmarks demonstrate that\nagents trained with diverse and informative language feedback can achieve\nenhanced generalization and fast adaptation to new tasks. These findings\nhighlight the pivotal role of language use in teaching embodied agents new\ntasks in an open world. Project website:\nhttps://github.com/sled-group/Teachable_RL",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24218v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Zonal RL-RRT: Integrated RL-RRT Path Planning with Collision Probability\n  and Zone Connectivity",
+        "authors": "AmirMohammad Tahmasbi, MohammadSaleh Faghfoorian, Saeed Khodaygan, Aniket Bera",
+        "summary": "Path planning in high-dimensional spaces poses significant challenges,\nparticularly in achieving both time efficiency and a fair success rate. To\naddress these issues, we introduce a novel path-planning algorithm, Zonal\nRL-RRT, that leverages kd-tree partitioning to segment the map into zones while\naddressing zone connectivity, ensuring seamless transitions between zones. By\nbreaking down the complex environment into multiple zones and using Q-learning\nas the high-level decision-maker, our algorithm achieves a 3x improvement in\ntime efficiency compared to basic sampling methods such as RRT and RRT* in\nforest-like maps. Our approach outperforms heuristic-guided methods like BIT*\nand Informed RRT* by 1.5x in terms of runtime while maintaining robust and\nreliable success rates across 2D to 6D environments. Compared to learning-based\nmethods like NeuralRRT* and MPNetSMP, as well as the heuristic RRT*J, our\nalgorithm demonstrates, on average, 1.5x better performance in the same\nenvironments. We also evaluate the effectiveness of our approach through\nsimulations of the UR10e arm manipulator in the MuJoCo environment. A key\nobservation of our approach lies in its use of zone partitioning and\nReinforcement Learning (RL) for adaptive high-level planning allowing the\nalgorithm to accommodate flexible policies across diverse environments, making\nit a versatile tool for advanced path planning.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24205v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "DiffPano: Scalable and Consistent Text to Panorama Generation with\n  Spherical Epipolar-Aware Diffusion",
+        "authors": "Weicai Ye, Chenhao Ji, Zheng Chen, Junyao Gao, Xiaoshui Huang, Song-Hai Zhang, Wanli Ouyang, Tong He, Cairong Zhao, Guofeng Zhang",
+        "summary": "Diffusion-based methods have achieved remarkable achievements in 2D image or\n3D object generation, however, the generation of 3D scenes and even\n$360^{\\circ}$ images remains constrained, due to the limited number of scene\ndatasets, the complexity of 3D scenes themselves, and the difficulty of\ngenerating consistent multi-view images. To address these issues, we first\nestablish a large-scale panoramic video-text dataset containing millions of\nconsecutive panoramic keyframes with corresponding panoramic depths, camera\nposes, and text descriptions. Then, we propose a novel text-driven panoramic\ngeneration framework, termed DiffPano, to achieve scalable, consistent, and\ndiverse panoramic scene generation. Specifically, benefiting from the powerful\ngenerative capabilities of stable diffusion, we fine-tune a single-view\ntext-to-panorama diffusion model with LoRA on the established panoramic\nvideo-text dataset. We further design a spherical epipolar-aware multi-view\ndiffusion model to ensure the multi-view consistency of the generated panoramic\nimages. Extensive experiments demonstrate that DiffPano can generate scalable,\nconsistent, and diverse panoramic images with given unseen text descriptions\nand camera poses.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24203v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "A Sagittal Planar Ankle-Foot Prosthesis with Powered Plantarflexion and\n  Socket Alignment",
+        "authors": "Mark A. Price, Frank C. Sup IV",
+        "summary": "Powered ankle-foot prostheses can often reduce the energy cost of walking by\nassisting with push-off. However, focus on providing mechanical work may lead\nto ignoring or exacerbating common issues with chronic pain, irritation,\npressure ulcer development, and eventual osteoarthritis in persons with\namputation. This paper presents the design and validation of a novel\ntranstibial prosthesis informed by predictive biomechanical simulations of gait\nwhich minimize a combination of user effort and interaction loading from the\nprosthesis socket. From these findings, the device was designed with a\nnon-biomimetic anterior-posterior translation degree of freedom with a 10 cm\nrange of motion which is primarily position-controlled to change the alignment\nof the prosthetic foot with the residual limb. The system is both mobile and\ntethered, with the batteries, actuators, and majority of electronics located in\na small backpack. Mechanical loads are transmitted through cables to the\nprosthesis, minimizing the distal mass carriage required. We measured torque\nand force sensing accuracy, open loop actuator performance, closed loop torque\nand position control bandwidth, and torque and position tracking error during\nwalking. The system is capable of producing up to 160 N-m of plantarflexion\ntorque and 394 N of AP translation force with a closed loop control bandwidth\nof about 7 Hz in both degrees of freedom. Torque tracking during walking was\naccurate within about 10 N-m but position tracking was substantially affected\nby phase lag, possibly due to cable slack in the bidirectional mechanism. The\nprototype was capable of replicating our simulated prosthesis dynamics during\ngait and offers useful insights into the advantages and the practical\nconsiderations of using predictive biomechanical simulation as a design tool\nfor wearable robots.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24196v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "DexMimicGen: Automated Data Generation for Bimanual Dexterous\n  Manipulation via Imitation Learning",
+        "authors": "Zhenyu Jiang, Yuqi Xie, Kevin Lin, Zhenjia Xu, Weikang Wan, Ajay Mandlekar, Linxi Fan, Yuke Zhu",
+        "summary": "Imitation learning from human demonstrations is an effective means to teach\nrobots manipulation skills. But data acquisition is a major bottleneck in\napplying this paradigm more broadly, due to the amount of cost and human effort\ninvolved. There has been significant interest in imitation learning for\nbimanual dexterous robots, like humanoids. Unfortunately, data collection is\neven more challenging here due to the challenges of simultaneously controlling\nmultiple arms and multi-fingered hands. Automated data generation in simulation\nis a compelling, scalable alternative to fuel this need for data. To this end,\nwe introduce DexMimicGen, a large-scale automated data generation system that\nsynthesizes trajectories from a handful of human demonstrations for humanoid\nrobots with dexterous hands. We present a collection of simulation environments\nin the setting of bimanual dexterous manipulation, spanning a range of\nmanipulation behaviors and different requirements for coordination among the\ntwo arms. We generate 21K demos across these tasks from just 60 source human\ndemos and study the effect of several data generation and policy learning\ndecisions on agent performance. Finally, we present a real-to-sim-to-real\npipeline and deploy it on a real-world humanoid can sorting task. Videos and\nmore are at https://dexmimicgen.github.io/",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24185v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "$π_0$: A Vision-Language-Action Flow Model for General Robot Control",
+        "authors": "Kevin Black, Noah Brown, Danny Driess, Adnan Esmail, Michael Equi, Chelsea Finn, Niccolo Fusai, Lachy Groom, Karol Hausman, Brian Ichter, Szymon Jakubczak, Tim Jones, Liyiming Ke, Sergey Levine, Adrian Li-Bell, Mohith Mothukuri, Suraj Nair, Karl Pertsch, Lucy Xiaoyang Shi, James Tanner, Quan Vuong, Anna Walling, Haohuan Wang, Ury Zhilinsky",
+        "summary": "Robot learning holds tremendous promise to unlock the full potential of\nflexible, general, and dexterous robot systems, as well as to address some of\nthe deepest questions in artificial intelligence. However, bringing robot\nlearning to the level of generality required for effective real-world systems\nfaces major obstacles in terms of data, generalization, and robustness. In this\npaper, we discuss how generalist robot policies (i.e., robot foundation models)\ncan address these challenges, and how we can design effective generalist robot\npolicies for complex and highly dexterous tasks. We propose a novel flow\nmatching architecture built on top of a pre-trained vision-language model (VLM)\nto inherit Internet-scale semantic knowledge. We then discuss how this model\ncan be trained on a large and diverse dataset from multiple dexterous robot\nplatforms, including single-arm robots, dual-arm robots, and mobile\nmanipulators. We evaluate our model in terms of its ability to perform tasks in\nzero shot after pre-training, follow language instructions from people and from\na high-level VLM policy, and its ability to acquire new skills via fine-tuning.\nOur results cover a wide variety of tasks, such as laundry folding, table\ncleaning, and assembling boxes.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24164v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Language-Driven Policy Distillation for Cooperative Driving in\n  Multi-Agent Reinforcement Learning",
+        "authors": "Jiaqi Liu, Chengkai Xu, Peng Hang, Jian Sun, Mingyu Ding, Wei Zhan, Masayoshi Tomizuka",
+        "summary": "The cooperative driving technology of Connected and Autonomous Vehicles\n(CAVs) is crucial for improving the efficiency and safety of transportation\nsystems. Learning-based methods, such as Multi-Agent Reinforcement Learning\n(MARL), have demonstrated strong capabilities in cooperative decision-making\ntasks. However, existing MARL approaches still face challenges in terms of\nlearning efficiency and performance. In recent years, Large Language Models\n(LLMs) have rapidly advanced and shown remarkable abilities in various\nsequential decision-making tasks. To enhance the learning capabilities of\ncooperative agents while ensuring decision-making efficiency and\ncost-effectiveness, we propose LDPD, a language-driven policy distillation\nmethod for guiding MARL exploration. In this framework, a teacher agent based\non LLM trains smaller student agents to achieve cooperative decision-making\nthrough its own decision-making demonstrations. The teacher agent enhances the\nobservation information of CAVs and utilizes LLMs to perform complex\ncooperative decision-making reasoning, which also leverages carefully designed\ndecision-making tools to achieve expert-level decisions, providing high-quality\nteaching experiences. The student agent then refines the teacher's prior\nknowledge into its own model through gradient policy updates. The experiments\ndemonstrate that the students can rapidly improve their capabilities with\nminimal guidance from the teacher and eventually surpass the teacher's\nperformance. Extensive experiments show that our approach demonstrates better\nperformance and learning efficiency compared to baseline methods.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24152v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "3D-ViTac: Learning Fine-Grained Manipulation with Visuo-Tactile Sensing",
+        "authors": "Binghao Huang, Yixuan Wang, Xinyi Yang, Yiyue Luo, Yunzhu Li",
+        "summary": "Tactile and visual perception are both crucial for humans to perform\nfine-grained interactions with their environment. Developing similar\nmulti-modal sensing capabilities for robots can significantly enhance and\nexpand their manipulation skills. This paper introduces \\textbf{3D-ViTac}, a\nmulti-modal sensing and learning system designed for dexterous bimanual\nmanipulation. Our system features tactile sensors equipped with dense sensing\nunits, each covering an area of 3$mm^2$. These sensors are low-cost and\nflexible, providing detailed and extensive coverage of physical contacts,\neffectively complementing visual information. To integrate tactile and visual\ndata, we fuse them into a unified 3D representation space that preserves their\n3D structures and spatial relationships. The multi-modal representation can\nthen be coupled with diffusion policies for imitation learning. Through\nconcrete hardware experiments, we demonstrate that even low-cost robots can\nperform precise manipulations and significantly outperform vision-only\npolicies, particularly in safe interactions with fragile items and executing\nlong-horizon tasks involving in-hand manipulation. Our project page is\navailable at \\url{https://binghao-huang.github.io/3D-ViTac/}.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24091v1",
+        "category": "cs.RO",
+        "topic": "Robotics and Automation"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "DECT-2020 NR Link Distance Performance in Varying Environments: Models\n  and Measurements",
+        "authors": "Md Mohaiminul Haque, Joonas Sae, Juho Pirskanen, Mikko Valkama",
+        "summary": "Digital Enhanced Cordless Telecommunications 2020 New Radio (DECT-2020 NR)\nhas garnered recognition as an alternative for cellular 5G technology in the\ninternet of things industry. This paper presents a study centered around the\nanalysis of the link distance performance in varying environments for DECT-2020\nNR. The study extensively examines and analyzes received signal strength\nindicator and resulting path loss values in comparison with theoretical models,\nas well as packet success rates (SR) and signal-to-noise ratio against varying\ndistances. The measurements show that with an SR of over 90%, an antenna height\nof 1.5 m, indoor link distances with a single device-to-device connection with\n0 dBm transmission (TX) power can reach over 60 m in non-line-of-sight (NLOS)\nareas and up to 190 m in LOS areas with smaller -8 dBm TX power. Similarly, for\noutdoor use cases, link distances of over 600 m can be reached with +19 dBm TX\npower.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24112v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Efficient Satellite-Ground Interconnection Design for Low-orbit\n  Mega-Constellation Topology",
+        "authors": "Wenhao Liu, Jiazhi Wu, Quanwei Lin, Handong Luo, Qi Zhang, Kun Qiu, Zhe Chen, Yue Gao",
+        "summary": "The low-orbit mega-constellation network (LMCN) is an important part of the\nspace-air-ground integrated network system. An effective satellite-ground\ninterconnection design can result in a stable constellation topology for LMCNs.\nA naive solution is accessing the satellite with the longest remaining service\ntime (LRST), which is widely used in previous designs. The Coordinated\nSatellite-Ground Interconnecting (CSGI), the state-of-the-art algorithm,\ncoordinates the establishment of ground-satellite links (GSLs). Compared with\nexisting solutions, it reduces latency by 19% and jitter by 70% on average.\nHowever, CSGI only supports the scenario where terminals access only one\nsatellite and cannot fully utilize the multi-access capabilities of terminals.\nAdditionally, CSGI's high computational complexity poses deployment challenges.\nTo overcome these problems, we propose the Classification-based Longest\nRemaining Service Time (C-LRST) algorithm. C-LRST supports the actual scenario\nwith multi-access capabilities. It adds optional paths during routing with low\ncomputational complexity, improving end-to-end communications quality. We\nconduct our 1000s simulation from Brazil to Lithuania on the open-source\nplatform Hypatia. Experiment results show that compared with CSGI, C-LRST\nreduces the latency and increases the throughput by approximately 60% and 40%,\nrespectively. In addition, C-LRST's GSL switching number is 14, whereas CSGI is\n23. C-LRST has better link stability than CSGI.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24039v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Distributing Intelligence in 6G Programmable Data Planes for Effective\n  In-Network Deployment of an Active Intrusion Detection System",
+        "authors": "Mattia G. Spina, Floriano De Rango, Edoardo Scalzo, Francesca Guerriero, Antonio Iera",
+        "summary": "The problem of attacks on new generation network infrastructures is becoming\nincreasingly relevant, given the widening of the attack surface of these\nnetworks resulting from the greater number of devices that will access them in\nthe future (sensors, actuators, vehicles, household appliances, etc.).\nApproaches to the design of intrusion detection systems must evolve and go\nbeyond the traditional concept of perimeter control to build on new paradigms\nthat exploit the typical characteristics of future 5G and 6G networks, such as\nin-network computing and intelligent programmable data planes. The aim of this\nresearch is to propose a disruptive paradigm in which devices in a typical data\nplane of a future programmable network have %classification and anomaly\ndetection capabilities and cooperate in a fully distributed fashion to act as\nan ML-enabled Active Intrusion Detection System \"embedded\" into the network.\nThe reported proof-of-concept experiments demonstrate that the proposed\nparadigm allows working effectively and with a good level of precision while\noccupying overall less CPU and RAM resources of the devices involved.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.24013v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Deep Learning Frameworks for Cognitive Radio Networks: Review and Open\n  Research Challenges",
+        "authors": "Senthil Kumar Jagatheesaperumal, Ijaz Ahmad, Marko Höyhtyä, Suleman Khan, Andrei Gurtov",
+        "summary": "Deep learning has been proven to be a powerful tool for addressing the most\nsignificant issues in cognitive radio networks, such as spectrum sensing,\nspectrum sharing, resource allocation, and security attacks. The utilization of\ndeep learning techniques in cognitive radio networks can significantly enhance\nthe network's capability to adapt to changing environments and improve the\noverall system's efficiency and reliability. As the demand for higher data\nrates and connectivity increases, B5G/6G wireless networks are expected to\nenable new services and applications significantly. Therefore, the significance\nof deep learning in addressing cognitive radio network challenges cannot be\noverstated. This review article provides valuable insights into potential\nsolutions that can serve as a foundation for the development of future B5G/6G\nservices. By leveraging the power of deep learning, cognitive radio networks\ncan pave the way for the next generation of wireless networks capable of\nmeeting the ever-increasing demands for higher data rates, improved\nreliability, and security.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23949v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "Tracer: A Tool for Race Detection in Software Defined Network Models",
+        "authors": "Georgiana Caltais, Mahboobeh Zangiabady, Ervin Zvirbulis",
+        "summary": "Software Defined Networking (SDN) has become a new paradigm in computer\nnetworking, introducing a decoupled architecture that separates the network\ninto the data plane and the control plane. The control plane acts as the\ncentralized brain, managing configuration updates and network management tasks,\nwhile the data plane handles traffic based on the configurations provided by\nthe control plane. Given its asynchronous distributed nature, SDN can\nexperience data races due to message passing between the control and data\nplanes. This paper presents Tracer, a tool designed to automatically detect and\nexplain the occurrence of data races in DyNetKAT SDN models. DyNetKAT is a\nformal framework for modeling and analyzing SDN behaviors, with robust\noperational semantics and a complete axiomatization implemented in Maude. Built\non NetKAT, a language leveraging Kleene Algebra with Tests to express data\nplane forwarding behavior, DyNetKAT extends these capabilities by adding\nprimitives for communication between the control and data planes. Tracer\nexploits the DyNetKAT axiomatization and enables race detection in SDNs based\non Lamport vector clocks. Tracer is a publicly available tool.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23763v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Biologically-Inspired Technologies: Integrating Brain-Computer Interface\n  and Neuromorphic Computing for Human Digital Twins",
+        "authors": "Chen Shang, Jiadong Yu, Dinh Thai Hoang",
+        "summary": "The integration of the Metaverse into a human-centric ecosystem has\nintensified the need for sophisticated Human Digital Twins (HDTs) that are\ndriven by the multifaceted human data. However, the effective construction of\nHDTs faces significant challenges due to the heterogeneity of data collection\ndevices, the high energy demands associated with processing intricate data, and\nconcerns over the privacy of sensitive information. This work introduces a\nnovel biologically-inspired (bio-inspired) HDT framework that leverages\nBrain-Computer Interface (BCI) sensor technology to capture brain signals as\nthe data source for constructing HDT. By collecting and analyzing these\nsignals, the framework not only minimizes device heterogeneity and enhances\ndata collection efficiency, but also provides richer and more nuanced\nphysiological and psychological data for constructing personalized HDTs. To\nthis end, we further propose a bio-inspired neuromorphic computing learning\nmodel based on the Spiking Neural Network (SNN). This model utilizes discrete\nneural spikes to emulate the way of human brain processes information, thereby\nenhancing the system's ability to process data effectively while reducing\nenergy consumption. Additionally, we integrate a Federated Learning (FL)\nstrategy within the model to strengthen data privacy. We then conduct a case\nstudy to demonstrate the performance of our proposed twofold bio-inspired\nscheme. Finally, we present several challenges and promising directions for\nfuture research of HDTs driven by bio-inspired technologies.",
+        "published": "2024-10-31",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23639v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Advancing Free-Space Optical Communication System Architecture:\n  Performance Analysis of Varied Optical Ground Station Network Configurations",
+        "authors": "Eugene Rotherham, Connor Casey, Eva Fernandez Rodriguez, Karen Wendy Vidaurre Torrez, Maren Mashor, Isaac Pike",
+        "summary": "This study discusses the current state of FSO technology, as well as global\ntrends and developments in the industrial ecosystem to identify obstacles to\nthe full realization of optical space-to-ground communication networks.\nAdditionally, link performance and network availability trade-off studies are\npresented, comparing overall system performance between portable and large OGS\nnetworks in conjunction with a constellation of small low Earth orbit (LEO)\nsatellites. The paper provides an up-to-date overview and critical analysis of\nthe FSO industry and assesses the feasibility of low-cost portable terminals as\nan alternative to larger high-capacity OGS systems. This initiative aims to\nbetter inform optical communications stakeholders, including governments,\nacademic institutions, satellite operators, manufacturers, and communication\nservice providers",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23470v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 78
+    },
+    {
+      "article": {
+        "title": "Practical Evaluation of Wize and Bluetooth 5 Assisted RFID for an\n  Opportunistic Vehicular Scenario",
+        "authors": "Angel Niebla-Montero, Ivan Froiz-Miguez, Paula Fraga-Lamas, Tiago M. Fernandez-Carames",
+        "summary": "Wireless communications are critical in the constantly changing environment\nof IoT and RFID technologies, where thousands of devices can be deployed across\na wide range of scenarios. Whether connecting to cloud servers or local\nfog/edge devices, maintaining seamless communications is difficult, especially\nin demanding contexts like industrial warehouses or remote rural areas.\nOpportunistic networks, when combined with edge devices, provide a possible\nsolution to this challenge. These networks enable IoT devices, particularly\nmobile devices, to redirect information as it passes via other devices until it\nreaches an edge node. Using different communication protocols, this paper\ninvestigates their effects on response times and total messages received for a\nopportunistic assisted RFID system. Specifically, this article compares two\ncommunications technologies (Bluetooth 5 and Wize) when used for building a\nnovel Opportunistic Edge Computing (OEC) identification system based on\nlow-cost Single-Board Computers (SBCs). For such a comparison, measurements\nhave been performed for quantifying packet loss and latency. The tests\nconsisted in two experiments under identical conditions and scenarios, with a\nnode located roadside, transmitting identification information, and a node\nlocated inside a moving vehicle that was driven at varying vehicle speeds. The\nobtained results show for Bluetooth 5 average latencies ranging between 700 and\n950 ms with packet losses between 7% and 27%, whereas for Wize the average\ndelay as between 150 and 370 ms with packet losses between 20% and 52%.",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23366v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Resilient-By-Design: A Resiliency Framework for Future Wireless Networks",
+        "authors": "Nurul Huda Mahmood, Sumudu Samarakoon, Pawani Porambage, Mehdi Bennis, Matti Latva-aho",
+        "summary": "Our future society will be increasingly digitalised, hyper-connected and\nglobally data driven. The sixth generation (6G) and beyond 6G wireless networks\nare expected to bridge the digital and physical worlds by providing wireless\nconnectivity as a service to different vertical sectors, including industries,\nsmart cities, eHealth and autonomous transportation. Such far reaching\nintegration will render the society increasingly reliant on wireless networks.\nWhile this has the potential to greatly enhance our quality and ease of life,\nany disruption to these networks would also have significant impact with\noverreaching consequences. Disruptions can happen due to a variety of reasons,\nincluding planned outages, failures due to the nature of wireless propagation,\nnatural disasters, and deliberate cybersecurity attacks. Hence, 6G and beyond\n6G networks should not only provide near instant and virtually unlimited\nconnectivity, but also be resilient against internal and external disruptions.\nThis paper proposes a resilient-by-design framework towards this end. First, we\nprovide an overview of the disruption landscape. Thereafter, we comprehensively\noutline the main features of the proposed concept. Finally, we detail the four\nkey steps of the framework, namely predict, preempt, protect and progress. A\nsimple but illustrative preliminary simulation result is also presented to\nhighlight the potential advantages and efficiency of the proposed approach in\naddressing outages.",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23203v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 85
+    },
+    {
+      "article": {
+        "title": "Energy-Efficient Intra-Domain Network Slicing for Multi-Layer\n  Orchestration in Intelligent-Driven Distributed 6G Networks: Learning Generic\n  Assignment Skills with Unsupervised Reinforcement Learning",
+        "authors": "Navideh Ghafouri, John S. Vardakas, Kostas Ramantas, Christos Verikoukis",
+        "summary": "Since the 6th Generation (6G) of wireless networks is expected to provide a\nnew level of network services and meet the emerging expectations of the future,\nit will be a complex and intricate networking system. 6Gs sophistication and\nrobustness will be accompanied by complexities, which will require novel\nstrategies to tackle them. This research work focuses on decentralized and\nmulti-level system models for 6G networks and proposes an energy efficient\nautomation strategy for edge domain management and Network Slicing (NS) with\nthe main objective of reducing the networks complexity by leveraging\nscalability, efficiency, and generalization. Accordingly, we propose a\npre-train phase to discover useful assignment skills in network edge domains by\nutilizing unsupervised Reinforcement Learning (unsupervised RL). The suggested\ntechnique does not depend on the domain specifications and thus is applicable\nto all the edge domains. Our proposed approach not only enables scalability and\ndecentralization, but it also delivers efficiency by assisting domain\ncontrollers to provide various service types. We implemented the pre-training\nphase, and monitored that the discovered assignment skills span the entire\ninterval of possible resource assignment portions for every service type.",
+        "published": "2024-10-30",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.23161v1",
+        "category": "cs.NI",
+        "topic": "Computer Networks and Internet Architecture"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "A Review on Hydrogen Production Technologies and Its Future Demand",
+        "authors": "Mohammad Abubakr, Suhaib Shahid, Iram Arman",
+        "summary": "Hydrogen production is a vital process in the quest for decarbonization and a\nsustainable future. This conversation explores the various technologies used in\nhydrogen production, such as steam methane reforming, electrolysis, and biomass\ngasification. These methods have different applications and efficiencies, but\nall contribute to the production of hydrogen gas. The future of hydrogen\nproduction looks promising, as it offers a clean and versatile energy source\nthat can be used in various sectors, including transportation, industry, and\npower generation. The increasing demand for hydrogen in these sectors, coupled\nwith the global push for decarbonization, highlights the importance of\nadvancing hydrogen production technologies and infrastructure. This paper\nfocuses broadly on different methods of hydrogen production like steam methane\nreforming, electrolysis, and biomass gasification. Steam methane reforming is\ncurrently the most common method, accounting for about 95% of global hydrogen\nproduction. Electrolysis is another method that uses electricity to split water\ninto hydrogen and oxygen. Biomass gasification involves converting organic\nmaterials into hydrogen gas through a thermochemical process. The renewable\nenergy sources considered are water and biomass and the methods considered are\nElectrolysis (grid), thermolysis, thermochemical water splitting,\nphotoelectrochemical water splitting, and gasification. Electrolysis of water\nto produce hydrogen accounts for about 5% of the total hydrogen production.\nStatistically, global hydrogen production reached about USD 155.35 billion in\n2022, with the majority of it being used in the petroleum refining and ammonia\nproduction industries. As for applications, hydrogen can be used as a fuel for\nfuel cell vehicles, as a feedstock for chemical processes, and as a storage\nmedium for renewable energy.",
+        "published": "2024-10-10",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.08154v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 75
+    },
+    {
+      "article": {
+        "title": "Doping-free Janus homojunction solar cell with efficiency exceeding 23%",
+        "authors": "Lei Li, Zi-Xuan Yang, Tao Huang, Hui Wan, Wu-Yu Chen, Tao Zhang, Gui-Fang Huang, Wangyu Hu, Wei-Qing Huang",
+        "summary": "Photovoltaic solar cell is one of the main renewable energy sources, and its\npower conversion efficiency (PCE) is improved by employing doping or\nheterojunction to reduce the photogenerated carrier recombination. Here, we\npropose a doping-free homojunction solar cell utilizing two-dimensional Janus\nsemiconductors to achieve high PCE. Thanks to the intrinsic dipole of Janus\nstructure, doping-free Janus homojunction has naturally not only a type-II band\nalignment to promote the photoexciton dissociation, but also a smaller\neffective bandgap to enhance light absorption. More importantly, the intrinsic\nelectric field across the Janus structure will drive photoinduced electron and\nhole transfer from the interface to the opposite transport layers respectively,\nsignificantly enhancing the efficiency of carrier separation and transport. We\nillustrate the concept in titanium-based Janus monolayer homojunction, where\nthe theoretically observed PCE reaches 23.22% of TiSSe homojunction. Our work\nopens a novel avenue to design low-cost, high-efficiency solar cells.",
+        "published": "2024-08-22",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2408.12374v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Large Area Near-Field Thermophotovoltaics for Low Temperature\n  Applications",
+        "authors": "Jennifer Selvidge, Ryan M. France, John Goldsmith, Parth Solanki, Myles A. Steiner, Eric J. Tervo",
+        "summary": "Thermophotovoltaics, devices that convert thermal infrared photons to\nelectricity, offer a key pathway for a variety of critical renewable energy\ntechnologies including thermal energy storage, waste heat recovery, and direct\nsolar-thermal power generation. However, conventional far-field devices\nstruggle to generate reasonable powers at lower temperatures. Near-field\nthermophotovoltaics provide a pathway to substantially higher powers by\nleveraging photon tunneling effects. Here we present a large area near-field\nthermophotovoltaic device, created with an epitaxial co-fabrication approach,\nthat consists of a self-supported 0.28 cm2 emitter-cell pair with a 150 nm gap.\nThe device generates 1.22 mW at 460 C, a twenty-five-fold increase over the\nsame cell measured in a far-field configuration. Furthermore, the near-field\ndevice demonstrates short circuit current densities greater than the far-field\nphotocurrent limit at all the temperatures tested, confirming the role of\nphoton tunneling effects in the performance enhancement. Modeling suggests\nseveral practical directions for cell improvements and further increases in\npower density. These results highlight the promise of near-field\nthermophotovoltaics, especially for low temperature applications.",
+        "published": "2024-08-02",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2408.01295v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Record nighttime electric power generation at a density of 350 mW/m$^2$\n  via radiative cooling",
+        "authors": "Sid Assawaworrarit, Ming Zhou, Lingling Fan, Shanhui Fan",
+        "summary": "The coldness of the universe is a thermodynamic resource that has largely\nremained untapped for renewable energy generation. Recently, a growing interest\nin this area has led to a number of studies with the aim to realize the\npotential of tapping this vast resource for energy generation. While the\ntheoretical calculation based on thermodynamic principles places an upper limit\nin the power density at the level of 6000 mW/m$^2$, most experimental\ndemonstrations so far result in much lower power density at the level of tens\nof mW/m$^2$. Here we demonstrate, through design optimization involving the\ntailoring of the thermal radiation spectrum, the minimization of parasitic heat\nleakage, and the maximum conversion of heat to electricity, an energy\ngeneration system harvesting electricity from the thermal radiation of the\nambient heat to the cold universe that achieves a sustained power density of\n350 mW/m$^2$. We further demonstrate a power density at the 1000 mW/m$^2$ level\nusing an additional heat source or heat storage that provides access to heat at\na temperature above ambient. Our work here shows that the coldness of the\nuniverse can be harvested to generate renewable energy at the power density\nlevel that approaches the established bound.",
+        "published": "2024-07-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2407.17751v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "High Precision Microscale 3D Manufacturing of Ultra Low Expansion Glass\n  by Femtosecond Selective Laser Etching",
+        "authors": "Enrico Casamenti, Alessandro Bruno, Pietro Bernasconi, Andrea Lovera",
+        "summary": "Due to its exceptional dimensional stability in harsh thermal conditions and\nexcellent mechanical and optical properties, Corning ultra-low expansion (ULE)\nglass is the material of choice in many high-demanding fields such as\naerospace, astronomy, and advanced optics. This material has recently attracted\nrenewed attention with the advent of femtosecond laser technology, with a\nparticular focus on the interaction of ultrafast pulses and the material\nitself. Phenomena like the formation of self-assembled nanogratings and their\nthermal stability as well as the darkening of laser-affected zones have then\nbeen characterized. This paper presents how to exploit femtosecond selective\nlaser etching (SLE) techniques to manufacture truly three-dimensional (3D)\ncomponents. To demonstrate the micron-scale accuracy and repeatability of this\nprocess from the mm- to the cm-size range, various devices are designed and\nfabricated: fiber hole arrays with different hole densities, sizes,\norientations, and shapes; and fiber V-groove arrays. Additionally, a mechanical\nflexural fiber mount is presented as an example of how multiple functionalities\ncan be monolithically integrated into a single piece of glass through SLE\ntechnology. An example of a passive alignment substrate for optical components\nis also shown. SLE technique represents a new advancement in the field of\nmicroscale manufacturing, enabling the scalable production of custom-designed\nULE glass structures with unprecedented precision and complexity, paving the\nway for the miniaturized integration of highly stable components.",
+        "published": "2024-06-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2406.19745v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Triboelectric Pixels as building blocks for microscale and large area\n  integration of drop energy harvesters",
+        "authors": "Ali Ghaffarinejad, Xabier Garcia-Casas, Fernando Nunez-Galvez, Jorge Budagosky, Vanda Godinho, Carmen Lopez-Santos, Juan Ramon Sanchez-Valencia, Angel Barranco, Ana Borras",
+        "summary": "The ultimate step towards the exploitation of water as a clean and renewable\nenergy source addresses the energies stored in the low frequencies of liquid\nflows, which demands flexible solutions to adapt to multiple scenarios, from\nraindrops to waves, including water moving in pipelines and microdevices. Thus,\nharvesting low-frequency flows is a young concept compared to solar and wind\npowers, where triboelectric nanogenerators have been revealed as the most\npromising relevant actors. However, despite widespread attempts by researchers,\nthe drop energy harvesters' output power is still low, mainly because of the\nlimitations in candidates endowed with ideal triboelectric and wetting\nproperties and also the non-optimal and centimetre-scale device architecture\nthat prevents the conversion of the complete kinetic energy of impinging drops.\nHerein, we disclose a microscale triboelectric nanogenerator that can harvest a\nhigh density of electrical power from drops through a single, submillisecond,\nlong-lasting step. The mechanism relies on an instantaneous electrical\ncapacitance variation owing to the high-speed contact of the drops with the\nelectrodes' active area. We discuss the role of the precharged effect of the\ntriboelectric surface in the time characteristic of the conversion event. The\ncapacitive and microscale structure of the device is endowed with a small form\nfactor that allows for the production of densely packed arrays. The proposed\narchitecture can be adjusted to different liquids and scales and is compatible\nwith a variety of triboelectric surfaces, including flexible, transparent, and\nthin-film approaches.",
+        "published": "2024-05-03",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2405.02464v2",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Scale-bridging within a complex model hierarchy for investigation of a\n  metal-fueled circular energy economy by use of Bayesian model calibration\n  with model error quantification",
+        "authors": "Lisanne Gossel, Elisa Corbean, Sören Dübal, Paul Brand, Mathis Fricke, Hendrik Nicolai, Christian Hasse, Sandra Hartl, Stefan Ulbrich, Dieter Bothe",
+        "summary": "Metal energy carriers recently gained growing interest in research as a\npromising storage and transport material for renewable electricity. Within the\ndevelopment of a metal-fueled circular energy economy, research involves a\nmodel hierarchy spanning from micro to macro scales, making the transfer of\ninformation among different levels of complexity a crucial task for the\nimplementation of the new technology. Chemical reactor networks (CRNs) are\nmodels of reduced complexity and a promising approach to accomplish the\nscale-bridging task. This holds if valid information from CRNs can be obtained\non a much denser set of operating conditions than available from experiments\nand elaborated simulation methods like Computational Fluid Dynamics (CFD). An\napproach for CRN calibration from recent literature, including model error\nquantification, is further developed to construct a CRN model of a laboratory\nreactor for flash ironmaking, using data from the literature. By introducing a\nmeta model of a CRN parameter, a simple CRN model on an extended set of\noperating conditions has successfully been calibrated. This way, the employed\ncoupled calibration and uncertainty quantification framework has proven\npromising for the task of scale-bridging in the model hierarchy under\ninvestigation.",
+        "published": "2024-04-18",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2404.13092v2",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 87
+    },
+    {
+      "article": {
+        "title": "Recent Advances on Transition-Metal-Based Layered Double Hydroxides\n  Nanosheets for Electrocatalytic Energy Conversion",
+        "authors": "Yuchen Wang, Man Zhang, Yaoyu Liu, Zhikeng Zheng, Biying Liu, Meng Chen, Guoqing Guan, Kai Yan",
+        "summary": "Transition-metal-based layered double hydroxides (TM-LDHs) nanosheets are\npromising electrocatalysts in the renewable electrochemical energy conversion\nsystem, which are regarded as alternatives to noble metal-based materials. In\nthis review, recent advances on effective and facile strategies to rationally\ndesign TM-LDHs nanosheets as electrocatalysts, such as increasing the number of\nactive sties, improving the utilization of active sites (atomic-scale\ncatalysts), modulating the electron configurations, and controlling the lattice\nfacets, are summarized and compared. Then, the utilization of these fabricated\nTM-LDHs nanosheets for oxygen evolution reaction, hydrogen evolution reaction,\nurea oxidation reaction, nitrogen reduction reaction, small molecule\noxidations, and biomass derivatives upgrading is articulated through\nsystematically discussing the corresponding fundamental design principles and\nreaction mechanism. Finally, the existing challenges in increasing the density\nof catalytically active sites and future prospects of TM-LDHs nanosheets-based\nelectrocatalysts in each application are also commented.",
+        "published": "2024-03-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2403.16461v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "On the geometric phase and its role in the design of elastic topological\n  materials",
+        "authors": "Mohit Kumar, Fabio Semperlotti",
+        "summary": "The geometric phase provides important mathematical insights to understand\nthe fundamental nature and evolution of the dynamic response in a wide spectrum\nof systems ranging from quantum to classical mechanics. While the concept of\ngeometric phase, which is an additional phase factor occurring in dynamical\nsystems, holds the same meaning across different fields of application, its use\nand interpretation can acquire important nuances specific to the system of\ninterest. In recent years, the development of quantum topological materials and\nits extension to classical mechanical systems have renewed the interest in the\nconcept of geometric phase. This review revisits the concept of geometric phase\nand discusses, by means of either established or original results, its critical\nrole in the design and dynamic behavior of elastic waveguides. Concepts of\ndifferential geometry and topology are put forward to provide a theoretical\nunderstanding of the geometric phase and its connection to the physical\nproperties of the system. Then, the concept of geometric phase is applied to\ndifferent types of elastic waveguides to explain how either topologically\ntrivial or non-trivial behavior can emerge based on the geometric features of\nthe waveguide.",
+        "published": "2024-03-13",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2403.08711v2",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Light-Metal Functionalized Boron Monoxide Monolayers as Efficient\n  Hydrogen Storage Material: Insights from DFT Simulations",
+        "authors": "Wael Othman, Wadha Al Falasi, Tanveer Hussain, Nacir Tit",
+        "summary": "Exceptionally high energy density by mass, natural abundance, widespread\napplications, and environmental friendliness make hydrogen (H2) a front-runner\namong clean energy options. However, the transition toward clean and renewable\nenergy applications and the actualization of H2 economy require an efficient H2\nstorage medium. Material-based H2 storage is a viable option, as liquefaction\nand storage under pressure require ultra-low temperature (-253{\\deg}C) and\ntremendously high pressure (700 atm), respectively. In this work, we highlight\nthe exceptional H2 storage capabilities of recently synthesized boron monoxide\n(BO) monolayer functionalized with light metals (Li, Na, K, and Ca). Our\ncomputational approach, employing density functional theory (DFT), ab initio\nmolecular dynamics (AIMD), and thermodynamic analysis, reveals promising\nresults. We found that up to four metal dopants (Li, Na, K, and Ca) can be\nadsorbed onto BO monolayer with significantly strong binding energies.\nImportantly, these bindings surpass the cohesive counterparts of the parental\nmetal bulks, consequently stabilizing the crystal integrities, as confirmed by\nAIMD simulations. Each metal dopant on BO efficiently adsorbs multiple H2\nmolecules through electrostatic and van der Waals interactions. Interestingly,\nthe metal-functionalized BO monolayers exhibit exceptionally high H2\ngravimetric capacities up to 11.75 wt%. These promising capacities exceed the\n5.50 wt% target set by the US Department of Energy for 2025. Following the same\nguidelines, the average binding energy per H2 molecule is within the range of\n-0.17 to -0.32 eV. The adsorption and desorption of H2 under practical working\nconditions are investigated by Langmuir adsorption model based statistical\nthermodynamic analysis, further supporting the potential of\nmetal-functionalized BO monolayers for material-based H2 storage applications.",
+        "published": "2024-02-22",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2402.14342v1",
+        "category": "physics.app-ph",
+        "topic": "Renewable Energy and Applied Physics"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Contextual Representation Anchor Network to Alleviate Selection Bias in\n  Few-Shot Drug Discovery",
+        "authors": "Ruifeng Li, Wei Liu, Xiangxin Zhou, Mingqian Li, Qiang Zhang, Hongyang Chen, Xuemin Lin",
+        "summary": "In the drug discovery process, the low success rate of drug candidate\nscreening often leads to insufficient labeled data, causing the few-shot\nlearning problem in molecular property prediction. Existing methods for\nfew-shot molecular property prediction overlook the sample selection bias,\nwhich arises from non-random sample selection in chemical experiments. This\nbias in data representativeness leads to suboptimal performance. To overcome\nthis challenge, we present a novel method named contextual representation\nanchor Network (CRA), where an anchor refers to a cluster center of the\nrepresentations of molecules and serves as a bridge to transfer enriched\ncontextual knowledge into molecular representations and enhance their\nexpressiveness. CRA introduces a dual-augmentation mechanism that includes\ncontext augmentation, which dynamically retrieves analogous unlabeled molecules\nand captures their task-specific contextual knowledge to enhance the anchors,\nand anchor augmentation, which leverages the anchors to augment the molecular\nrepresentations. We evaluate our approach on the MoleculeNet and FS-Mol\nbenchmarks, as well as in domain transfer experiments. The results demonstrate\nthat CRA outperforms the state-of-the-art by 2.60% and 3.28% in AUC and\n$\\Delta$AUC-PR metrics, respectively, and exhibits superior generalization\ncapabilities.",
+        "published": "2024-10-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20711v2",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Reprogramming Pretrained Target-Specific Diffusion Models for\n  Dual-Target Drug Design",
+        "authors": "Xiangxin Zhou, Jiaqi Guan, Yijia Zhang, Xingang Peng, Liang Wang, Jianzhu Ma",
+        "summary": "Dual-target therapeutic strategies have become a compelling approach and\nattracted significant attention due to various benefits, such as their\npotential in overcoming drug resistance in cancer therapy. Considering the\ntremendous success that deep generative models have achieved in structure-based\ndrug design in recent years, we formulate dual-target drug design as a\ngenerative task and curate a novel dataset of potential target pairs based on\nsynergistic drug combinations. We propose to design dual-target drugs with\ndiffusion models that are trained on single-target protein-ligand complex\npairs. Specifically, we align two pockets in 3D space with protein-ligand\nbinding priors and build two complex graphs with shared ligand nodes for\nSE(3)-equivariant composed message passing, based on which we derive a composed\ndrift in both 3D and categorical probability space in the generative process.\nOur algorithm can well transfer the knowledge gained in single-target\npretraining to dual-target scenarios in a zero-shot manner. We also repurpose\nlinker design methods as strong baselines for this task. Extensive experiments\ndemonstrate the effectiveness of our method compared with various baselines.",
+        "published": "2024-10-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20688v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "TurboHopp: Accelerated Molecule Scaffold Hopping with Consistency Models",
+        "authors": "Kiwoong Yoo, Owen Oertell, Junhyun Lee, Sanghoon Lee, Jaewoo Kang",
+        "summary": "Navigating the vast chemical space of druggable compounds is a formidable\nchallenge in drug discovery, where generative models are increasingly employed\nto identify viable candidates. Conditional 3D structure-based drug design\n(3D-SBDD) models, which take into account complex three-dimensional\ninteractions and molecular geometries, are particularly promising. Scaffold\nhopping is an efficient strategy that facilitates the identification of similar\nactive compounds by strategically modifying the core structure of molecules,\neffectively narrowing the wide chemical space and enhancing the discovery of\ndrug-like products. However, the practical application of 3D-SBDD generative\nmodels is hampered by their slow processing speeds. To address this bottleneck,\nwe introduce TurboHopp, an accelerated pocket-conditioned 3D scaffold hopping\nmodel that merges the strategic effectiveness of traditional scaffold hopping\nwith rapid generation capabilities of consistency models. This synergy not only\nenhances efficiency but also significantly boosts generation speeds, achieving\nup to 30 times faster inference speed as well as superior generation quality\ncompared to existing diffusion-based models, establishing TurboHopp as a\npowerful tool in drug discovery. Supported by faster inference speed, we\nfurther optimize our model, using Reinforcement Learning for Consistency Models\n(RLCM), to output desirable molecules. We demonstrate the broad applicability\nof TurboHopp across multiple drug discovery scenarios, underscoring its\npotential in diverse molecular settings.",
+        "published": "2024-10-28",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20660v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "E(3)-invaraint diffusion model for pocket-aware peptide generation",
+        "authors": "Po-Yu Liang, Jun Bai",
+        "summary": "Biologists frequently desire protein inhibitors for a variety of reasons,\nincluding use as research tools for understanding biological processes and\napplication to societal problems in agriculture, healthcare, etc.\nImmunotherapy, for instance, relies on immune checkpoint inhibitors to block\ncheckpoint proteins, preventing their binding with partner proteins and\nboosting immune cell function against abnormal cells. Inhibitor discovery has\nlong been a tedious process, which in recent years has been accelerated by\ncomputational approaches. Advances in artificial intelligence now provide an\nopportunity to make inhibitor discovery smarter than ever before. While\nextensive research has been conducted on computer-aided inhibitor discovery, it\nhas mainly focused on either sequence-to-structure mapping, reverse mapping, or\nbio-activity prediction, making it unrealistic for biologists to utilize such\ntools. Instead, our work proposes a new method of computer-assisted inhibitor\ndiscovery: de novo pocket-aware peptide structure and sequence generation\nnetwork. Our approach consists of two sequential diffusion models for\nend-to-end structure generation and sequence prediction. By leveraging angle\nand dihedral relationships between backbone atoms, we ensure an E(3)-invariant\nrepresentation of peptide structures. Our results demonstrate that our method\nachieves comparable performance to state-of-the-art models, highlighting its\npotential in pocket-aware peptide design. This work offers a new approach for\nprecise drug discovery using receptor-specific peptide generation.",
+        "published": "2024-10-27",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.21335v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 88
+    },
+    {
+      "article": {
+        "title": "FoldMark: Protecting Protein Generative Models with Watermarking",
+        "authors": "Zaixi Zhang, Ruofan Jin, Kaidi Fu, Le Cong, Marinka Zitnik, Mengdi Wang",
+        "summary": "Protein structure is key to understanding protein function and is essential\nfor progress in bioengineering, drug discovery, and molecular biology.\nRecently, with the incorporation of generative AI, the power and accuracy of\ncomputational protein structure prediction/design have been improved\nsignificantly. However, ethical concerns such as copyright protection and\nharmful content generation (biosecurity) pose challenges to the wide\nimplementation of protein generative models. Here, we investigate whether it is\npossible to embed watermarks into protein generative models and their outputs\nfor copyright authentication and the tracking of generated structures. As a\nproof of concept, we propose a two-stage method FoldMark as a generalized\nwatermarking strategy for protein generative models. FoldMark first pretrain\nwatermark encoder and decoder, which can minorly adjust protein structures to\nembed user-specific information and faithfully recover the information from the\nencoded structure. In the second step, protein generative models are fine-tuned\nwith watermark Low-Rank Adaptation (LoRA) modules to preserve generation\nquality while learning to generate watermarked structures with high recovery\nrates. Extensive experiments are conducted on open-source protein structure\nprediction models (e.g., ESMFold and MultiFlow) and de novo structure design\nmodels (e.g., FrameDiff and FoldFlow) and we demonstrate that our method is\neffective across all these generative models. Meanwhile, our watermarking\nframework only exerts a negligible impact on the original protein structure\nquality and is robust under potential post-processing and adaptive attacks.",
+        "published": "2024-10-27",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20354v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Equivariant Blurring Diffusion for Hierarchical Molecular Conformer\n  Generation",
+        "authors": "Jiwoong Park, Yang Shen",
+        "summary": "How can diffusion models process 3D geometries in a coarse-to-fine manner,\nakin to our multiscale view of the world? In this paper, we address the\nquestion by focusing on a fundamental biochemical problem of generating 3D\nmolecular conformers conditioned on molecular graphs in a multiscale manner.\nOur approach consists of two hierarchical stages: i) generation of\ncoarse-grained fragment-level 3D structure from the molecular graph, and ii)\ngeneration of fine atomic details from the coarse-grained approximated\nstructure while allowing the latter to be adjusted simultaneously. For the\nchallenging second stage, which demands preserving coarse-grained information\nwhile ensuring SE(3) equivariance, we introduce a novel generative model termed\nEquivariant Blurring Diffusion (EBD), which defines a forward process that\nmoves towards the fragment-level coarse-grained structure by blurring the fine\natomic details of conformers, and a reverse process that performs the opposite\noperation using equivariant networks. We demonstrate the effectiveness of EBD\nby geometric and chemical comparison to state-of-the-art denoising diffusion\nmodels on a benchmark of drug-like molecules. Ablation studies draw insights on\nthe design of EBD by thoroughly analyzing its architecture, which includes the\ndesign of the loss function and the data corruption process. Codes are released\nat https://github.com/Shen-Lab/EBD .",
+        "published": "2024-10-26",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20255v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "SAFE setup for generative molecular design",
+        "authors": "Yassir El Mesbahi, Emmanuel Noutahi",
+        "summary": "SMILES-based molecular generative models have been pivotal in drug design but\nface challenges in fragment-constrained tasks. To address this, the Sequential\nAttachment-based Fragment Embedding (SAFE) representation was recently\nintroduced as an alternative that streamlines those tasks. In this study, we\ninvestigate the optimal setups for training SAFE generative models, focusing on\ndataset size, data augmentation through randomization, model architecture, and\nbond disconnection algorithms. We found that larger, more diverse datasets\nimprove performance, with the LLaMA architecture using Rotary Positional\nEmbedding proving most robust. SAFE-based models also consistently outperform\nSMILES-based approaches in scaffold decoration and linker design, particularly\nwith BRICS decomposition yielding the best results. These insights highlight\nkey factors that significantly impact the efficacy of SAFE-based generative\nmodels.",
+        "published": "2024-10-26",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.20232v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Multi-view biomedical foundation models for molecule-target and property\n  prediction",
+        "authors": "Parthasarathy Suryanarayanan, Yunguang Qiu, Shreyans Sethi, Diwakar Mahajan, Hongyang Li, Yuxin Yang, Elif Eyigoz, Aldo Guzman Saenz, Daniel E. Platt, Timothy H. Rumbell, Kenney Ng, Sanjoy Dey, Myson Burch, Bum Chul Kwon, Pablo Meyer, Feixiong Cheng, Jianying Hu, Joseph A. Morrone",
+        "summary": "Foundation models applied to bio-molecular space hold promise to accelerate\ndrug discovery. Molecular representation is key to building such models.\nPrevious works have typically focused on a single representation or view of the\nmolecules. Here, we develop a multi-view foundation model approach, that\nintegrates molecular views of graph, image and text. Single-view foundation\nmodels are each pre-trained on a dataset of up to 200M molecules and then\naggregated into combined representations. Our multi-view model is validated on\na diverse set of 18 tasks, encompassing ligand-protein binding, molecular\nsolubility, metabolism and toxicity. We show that the multi-view models perform\nrobustly and are able to balance the strengths and weaknesses of specific\nviews. We then apply this model to screen compounds against a large (>100\ntargets) set of G Protein-Coupled receptors (GPCRs). From this library of\ntargets, we identify 33 that are related to Alzheimer's disease. On this\nsubset, we employ our model to identify strong binders, which are validated\nthrough structure-based modeling and identification of key binding motifs.",
+        "published": "2024-10-25",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.19704v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Structure Language Models for Protein Conformation Generation",
+        "authors": "Jiarui Lu, Xiaoyin Chen, Stephen Zhewen Lu, Chence Shi, Hongyu Guo, Yoshua Bengio, Jian Tang",
+        "summary": "Proteins adopt multiple structural conformations to perform their diverse\nbiological functions, and understanding these conformations is crucial for\nadvancing drug discovery. Traditional physics-based simulation methods often\nstruggle with sampling equilibrium conformations and are computationally\nexpensive. Recently, deep generative models have shown promise in generating\nprotein conformations as a more efficient alternative. However, these methods\npredominantly rely on the diffusion process within a 3D geometric space, which\ntypically centers around the vicinity of metastable states and is often\ninefficient in terms of runtime. In this paper, we introduce Structure Language\nModeling (SLM) as a novel framework for efficient protein conformation\ngeneration. Specifically, the protein structures are first encoded into a\ncompact latent space using a discrete variational auto-encoder, followed by\nconditional language modeling that effectively captures sequence-specific\nconformation distributions. This enables a more efficient and interpretable\nexploration of diverse ensemble modes compared to existing methods. Based on\nthis general framework, we instantiate SLM with various popular LM\narchitectures as well as proposing the ESMDiff, a novel BERT-like structure\nlanguage model fine-tuned from ESM3 with masked diffusion. We verify our\napproach in various scenarios, including the equilibrium dynamics of BPTI,\nconformational change pairs, and intrinsically disordered proteins. SLM\nprovides a highly efficient solution, offering a 20-100x speedup than existing\nmethods in generating diverse conformations, shedding light on promising\navenues for future research.",
+        "published": "2024-10-24",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.18403v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    },
+    {
+      "article": {
+        "title": "Optimizing First-Line Therapeutics in Non-Small Cell Lung Cancer:\n  Insights from Joint Modeling and Large-Scale Data Analysis",
+        "authors": "Benjamin K. Schneider, Sebastien Benzekry, Jonathan P. Mochel",
+        "summary": "Non-small cell lung cancer (NSCLC) is often intrinsically resistant to\nseveral first- and second-line therapeutics and can rapidly acquire further\nresistance after a patient begins receiving treatment. Treatment outcomes are\ntherefore significantly impacted by the optimization of therapeutic scheduling.\nPrevious preclinical research has suggested scheduling bevacizumab in sequence\nwith combination antiproliferatives could significantly improve clinical\noutcomes. Mathematical modeling is a well-suited tool for investigating this\nproposed scheduling modification. To address this critical need, individual\npatient tumor data from 11 clinical trials in NSCLC has been collated and used\nto develop a semi-mechanistic model of NSCLC growth and response to the various\ntherapeutics represented in those trials. Precise estimates of clinical\nparameters fundamental to cancer modeling have been produced - such as the rate\nof acquired resistance to various pharmaceuticals, the relationship between\ndrug concentration and cancer cell death, as well as the fine temporal dynamics\nof vascular remodeling in response to bevacizumab. In a reserved portion of the\ndataset, this model was used to predict the efficacy of individual treatment\ntime courses with a mean error rate of 59.7% after a single tumor measurement\nand 11.7% after three successive tumor measurements. A delay of 9.6 hours\nbetween pemetrexed-cisplatin and bevacizumab administration is predicted to\noptimize the benefit of sequential administration. At this gap, approximately\n93.5% of simulated patients benefited from a gap in sequential administration\ncompared with concomitant administration. Of those simulated patients, the mean\nimprovement in tumor reduction was 20.7%. This result suggests that scheduling\na modest gap between the administration of bevacizumab and its partner\nantiproliferatives could meaningfully improve patient outcomes in NSCLC.",
+        "published": "2024-10-22",
+        "doi": "No DOI available",
+        "link": "http://arxiv.org/abs/2410.16967v1",
+        "category": "q-bio.BM",
+        "topic": "Biomolecular Science and Drug Development"
+      },
+      "expertScore": 92
+    }
+  ]
+}

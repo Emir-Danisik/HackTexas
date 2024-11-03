@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { Icon } from '@iconify/react';
+import { calculateAuthorityScore } from './authorityScore';
 
 const Card = styled.div`
   background: white;
@@ -120,11 +121,33 @@ const BarFill = styled.div`
   transition: width 0.6s ease, background-color 0.6s ease;
 `;
 
-function ArticleCard({ article, credibilityScore = 50 }) {
+function ArticleCard({ article }) {
+  const [credibilityScore, setCredibilityScore] = useState(50);
+
+  useEffect(() => {
+    const fetchScore = async () => {
+      try {
+        const score = await calculateAuthorityScore(article);
+        setCredibilityScore(addRandomVariation(score));
+      } catch (error) {
+        console.error('Error fetching authority score:', error);
+      }
+    };
+
+    fetchScore();
+  }, [article]);
+
+
   const handleCardClick = (e) => {
     // Prevent click if link icon was clicked
     if (e.target.closest('.link-icon')) return;
     window.open(article.link, '_blank');
+  };
+
+  //traning data for fine-tuned llm is limited due to "broke college student syndrome" therefore have to partially simulate
+  const addRandomVariation = (score) => {
+    const variation = (Math.random() - 0.5) * 10; // Random number between -5 and +5
+    return Math.min(100, Math.max(0, Math.round(score + variation))); // Ensure score stays between 0-100
   };
 
   return (
