@@ -146,8 +146,8 @@ function ArticleCard({ article }) {
 
   //traning data for fine-tuned llm is limited due to "broke college student syndrome" therefore have to partially simulate
   const addRandomVariation = (score) => {
-    const variation = (Math.random() * 20 - 15); // Random number between -15 and +5
-    return Math.min(100, Math.max(0, Math.round(score + variation))); // Ensure score stays between 0-100
+    const variation = (Math.random() * 20 - 15); 
+    return Math.min(100, Math.max(0, Math.round(score + variation))); 
   };
 
   return (
